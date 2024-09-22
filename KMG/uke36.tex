@@ -1,0 +1,295 @@
+\documentclass{article}
+\title{MAT1105 ukesoppgaver KMG}
+\author{borgebj}
+\date{}
+
+\usepackage[norsk]{babel}
+\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[a4paper, top=1in, bottom=1in, left=1in, right=1in]{geometry}
+\usepackage{float}
+\usepackage{enumerate}
+
+
+
+\setlength{\parskip}{2em}
+\setlength{\parindent}{0pt}
+
+
+\begin{document}
+
+\maketitle
+
+\section*{Kapittel 2}
+
+\subsection*{Oppgave 2.1}
+
+(a, b) når $b < a$ er: 
+\[ (a, b) = \{ x \in \mathbb{R} \mid x > a\; og \; x < b\} \]
+
+\subsection*{Oppgave 2.2}
+
+Mengden av alle positive partall er: 
+
+1) \textbf{Liste:} \hspace{6em} 
+\(P = \{2, 4, 6, 8, ...\}\) 
+
+2) \textbf{Mengdebygger:} \hspace{1em}
+\( P = \{ 2x \mid x \in \mathbb{N}\} \) \\
+
+\subsection*{Oppgave 2.3}
+
+\(A = \{x \in \mathbb{R} \mid x > 4\} \hspace{2em} \text{ og } \hspace{2em} B = \{x \in \mathbb{R} \mid x \ge 0\}\)
+
+Vi velger et vilkårlig tall 'x' fra A.\\
+Dette tallet 'x' er høyere enn 4.\\
+Ethvert tall i B er høyere 0.\\
+'x' er høyere enn 0 siden 'x' er høyere enn 4, derfor er 'x' en delmengde av B\\
+
+\newpage
+
+\subsection*{Oppgave 2.4}
+
+A = B er det samme som \(A \subseteq B \ og \ B \subseteq A\)
+
+Dette er fordi hvis A er lik B så må alt som er i A være med i  B\\
+Hvis B er lik A så må alt som er i B være med i A også.\\
+
+\subsection*{Oppgave 2.5}
+
+\(A = \{1, 2, 3\}, \  B = \{3, 1, 1, 2\}\)
+
+\(
+1) \ A \subseteq B \\ \\
+1 \in B ? \ Ja \\
+2 \in B ? \ Ja \\
+3 \in B ? \ Ja \\ \\
+2) \ B \subseteq A \\ \\
+3 \in A ? \ Ja \\
+1 \in A ? \ Ja \\
+1 \in A ? \ Ja \\
+2 \in A ? \ ja 
+\)
+
+Slikt er det vist at alle elementer i A er i B, og er derfor en delmengde av B.
+
+\subsection*{Oppgave 2.6}
+\(A = \{1, 2\} \ og \ B = \{1, 2, \{1, 2\}\}\)
+
+\begin{enumerate}[a.]
+\item \(A \subseteq B\) \ - \textbf{Sant} \ \(1 \in B \text{ og } 2 \in B\)
+\item \(A \in B\) \ - \textbf{Sant} \ \(\ A = \{1, 2\} \ og \ \{1,2\} \in B\)
+\item \(B \subseteq A\) \ - \textbf{Ikke sant} \ \( \{1, 2\} \notin A\)
+\item \(B \in A\) \ - \textbf{Ikke sant} \ \(\{1, 2, \{1, 2\}\} \notin A\)
+\end{enumerate}
+
+\newpage
+
+\subsection*{Oppgave 2.7}
+
+\begin{enumerate}[a.]
+    \item \(A = \emptyset, \qquad\qquad\qquad\quad \underline{|A| = 0}\)
+    \item \(B = \{8, 10, 3, 5\}, \quad\quad\ \ \underline{|B| = 4}\)
+    \item \(C = \{2, 5, 2, 9, 5\}, \qquad \ \underline{|C| = 5}\)
+    \item \(D = \{x \in \mathbb{N} \mid x \le 20 \text{ og x er et partall}\}, \quad \underline{|D| = 10}\)
+    \item \(E = \{x \in \mathbb{Z} \mid x < 0\}, \quad \underline{|E| = \infty}\)
+\end{enumerate}
+
+\subsection*{Oppgave 2.8}
+
+\begin{enumerate}[-]
+    \item La a, b, c, d være fire tall.
+    \item La \(A = \{a, b, c, d\}\) 
+    \item \#A forteller oss om kardinaliteten, aka 'størrelsen' 
+    \item I dette tilfellet er \#A = 4 
+\end{enumerate}
+
+\subsection*{Oppgave 2.9}
+\[A = \{x \in \mathbb{R} \mid x > 4 \}, \quad B = \{x \in \mathbb{R} \mid x < 9 \}\]
+
+\begin{enumerate}
+    \item \(A \cup B = \{x \in \mathbb{R} \mid x > 4 \text{ eller } x < 9\}\)
+    \item \(A \cap B = \{5, 6, 7, 9\} = (4, 9)\)
+    \item \(A / B = \{x \in \mathbb{R} \mid x \ge 9 \} = [9, \infty)\)
+\end{enumerate}
+
+\subsection*{Oppgave 2.10}
+Hvis A og B er mengder:
+
+\begin{enumerate}[a.]
+    \item \(\mathbf{A \cap B = B \cap A}\)
+    \begin{enumerate}[-]
+        \item Sann fordi \(A \cap B\) er alt som er i både A og B.
+        \item \(B \cap A\) sier det samme, det er alt som er i både B og A.
+        \item Sann fordi snitt er kommutativ.
+    \end{enumerate} 
+    \item \(\mathbf{A \cup B = B \cup A}\)
+    \begin{enumerate}[-]
+        \item Stort sett samme som ovenfor, fordi:
+        \item \(A \cup B\) er alt som er i både A og B i en ny mengde
+        \item \(B \cup A)\) er alt som er i både B og A, det samme.
+        \item Sann fordi union er kommutativ
+    \end{enumerate} 
+    \item \(\mathbf{A \cap B \subseteq A}\)
+    \begin{enumerate}[-]
+        \item \(A \cap B\) evaluerer til alt som er i både A og B.
+        \item Om den ikke er tom, er det alltid en delmengde av A siden fra definisjon av snitt er den i både A og B.
+        \item Om den er tom, den tomme mengden, er det også en delmengde av A, siden den tomme mengden er delmengde av alle mengder.
+    \end{enumerate}
+    \item \(\mathbf{A \ \backslash\ B \subseteq A}\)
+    \begin{enumerate}[-]
+        \item \(A \backslash B\) vil si at vi fjerner alt som er i B fra A. 
+        \item Om ingen elementer fra B er i A, så fjernes ingenting og vi ender opp med samme mengde A.
+        \item Om elementer blir fjernet, ligger vi fremdeles igjen med en delmengde av A, om vi ender opp med elementer eller den tomme mengden
+    \end{enumerate}
+    \item \(\mathbf{A \subseteq A \cup B}\)
+    \begin{enumerate}[-]
+        \item \(A \cup B\) gir oss en ny mengde som inneholder elementer fra \underline{både A og B}, derfor er det alltid en delmengde av A.
+    \end{enumerate}
+\end{enumerate}
+
+\subsection*{Oppgave 2.11}
+\((A^c)^c = A\) \\ \\
+\(A^c\) forteller oss her at det er mengden av ALT som \underline{ikke} er med i mengden A. \\ \\
+\((A^c)^c\) vil da si mengden av alt som ikke er med i mengden av alt som ikke er med i A. \\ \\
+Da sier det seg selv at mengden må være A, fordi hvis mengden inneholder alt som ikke er inneholdt "utenfor" A, må den være "innenfor" A.
+
+\subsection*{Oppgave 2.12}
+\begin{enumerate}[a.]
+    \item \(\mathbf{A = (3, \infty)}\)
+    \begin{enumerate}[-]
+        \item \(A^c = \mathbb{R} \backslash A = \{x \in \mathbb{R} : x \notin (3, \infty)\} = \{x \in \mathbb{R} : x \le 3\} = (-\infty, 3)\) 
+    \end{enumerate}
+
+    \item \(\mathbf{B = \{2, 4, 6, 8, ...\}}\)
+    \begin{enumerate}[-]
+        \item \(B^c = B \backslash \mathbb{N} = \{n : n \notin \{2, 4, 6, 7, 8, ... \}\} = \{2n+1 \: n \in \mathbb{N}\} = \{1, 3, 5, 7, ...\}\)
+    \end{enumerate}
+
+    \item \(\mathbf{C = \mathbb{Q}}\)
+    \begin{enumerate}[-]
+        \item $\mathbb{Q}$ er alle rasjonale tall
+        \item Vi lar universet være $\mathbb{R}$
+        \item \(C^c = \mathbb{R} \ \backslash \ \mathbb{Q}\) = alle irrasjonale tall.
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+
+\subsection*{Oppgave 2.13}
+
+\((A \cup B)^c = A^c \cap B^c\) = "Komplementet av unionen mellom A og B er lik snittet mellom komplementene av A og B" \\
+
+\((A \cap B)^c = A^c \cup B^c\) = "Komplementet av snittet mellom A og B er lik unionen mellom komplementene av A og B
+
+\subsection*{Oppgave 2.14}
+
+\(A = \{x \in \mathbb{R} : x < 0\} \text{  og  } B = \{x \in \mathbb{R} : x \ge 1\}\)
+
+\((A \cup B)^c = A^c \cap B^c \\ \\
+A^c = \{x \in \mathbb{R} : x \ge 0\} = [0, \infty)\\
+B^c = \{x \in \mathbb{R} : x < 1\}  = (-\infty, 1] \\ \\
+A^c \cap B^c = B^c \cap A^c = (-\infty, 1] \cap [0, \infty) = [0, 1]\)
+
+\subsection*{Oppgave 2.15}
+
+Forskjellen mellom n-tuppelet \(A = (x_1, x_2, ..., x_n) \text{ og mengden } B = \{x_1, x_2, ..., x_n\}\) er hovedsakelig 2 ting:
+\begin{enumerate}
+    \item Rekkefølgen på elementene. i n-tuppelet A så spiller rekkefølgen på elementene en rolle, og vi kan ikke endre den. I mengden B spiller ikke rekkefølge noen rolle og vi kan skrive den som vi vil, e.g. \(B = \{x_2, x_1, ...,  x_n\}\)
+    \item Forekomster av elementer. I n-tuppelet A så har det noe å si hvis vi har 2 av samme element, mens i mengden B vil 2 av samme element ikke spille noen rolle, og bety kun at det elementet er i mengden. Kan forkortes til kun ett av det elementet.
+\end{enumerate}
+
+\subsection*{Oppgave 2.16}
+
+\(A = \{1, 2, 3\} \text{ og } B = \{0, 4\}\)
+
+\(A \times B = \{(1, 0), (1, 4), (2, 0), (2, 4), (3, 0), (3, 4)\}\)
+
+\(\#A = 3\quad \#B = 2 \quad \#A(\times B) = 3 \cdot 2 = 6\)
+
+\subsection*{Oppgave 2.17}
+
+A og B er endelige mengder.
+
+\(A \times B\) inneholder da \#A $\cdot$ \#B elementer
+
+\section*{Kapittel 3}
+
+\subsection*{Oppgave 3.1}
+
+\(f : A \rightarrow B\) \\
+A = definisjonsområdet \\
+B = verdiområdet \\
+
+\(V_f = \{ f(x) : x \in A \} \) = verdimengden
+
+Fra definisjonen til en funksjon, er alltid f(x) med i B.
+\\ Dermed er alle punkter i verdimengden også i B.
+\\ Ethvert objekt i verdimengden er del av verdiområdet, siden ethvert objekt i funksjonen, f(x) er tatt ifra verdiområdet.
+
+Eksempel: \\
+\( A = \{a, b, c\} \quad B = \{1, 2, 3\} \\ f : A \rightarrow B = \{(a, 1), (b, 2), (c, 1)\}\)
+
+Eksempel: \\
+\(A = \mathbb{R} \quad B = \mathbb{R} \\ f : A \rightarrow B = f : \mathbb{R} \rightarrow \mathbb{R}\) \\ 
+f.eks. funksjonen $f(x) = x^2$ \\
+Verdiområdet er $\mathbb{R}$ \\
+Verdimengden er \([0, \infty)\)
+
+\subsection*{Oppgave 3.2}
+Kardinalitetssymbolet \# 'mapper' alle mengder til et tall, som beskriver størrelsen. \\ \\
+Definisjonsområdet til kardinalitetssymbolet \# er alle mengder. \\ \\
+Verdiområdet til \# er mengden av alle heltall. \\ \\
+
+\newpage
+
+\subsection*{Oppgave 3.3}
+
+\subsection*{Oppgave 3.4}
+En funksjon $f : A \rightarrow B$ er bijektiv hvis det for enhver $y \in B$ finnes én, og bare én, $x \in A$ slik at $f(x) = y$
+
+En funksjon er injektiv hvis $f(x_1) \neq f(x_2)$ for alle $x_1, x_2 \in A$ som er slik at $x_1 \neq x_2$
+\\ - Dvs. at hver tilording / bruk av funksjonen gir et "unikt" element fra verdimengden. 
+\\ - Man skal ikke komme fram til samme resultat ved bruk av 2 ulike argumenter.
+\\ \\\
+En funksjon er surjektiv for enhver $y \in B$ finnes en $x \in A$ slik at $f(x) = y$
+\\ - Dvs. at enhver verdi i B, verdimengden, så finnes en verdi/et argument i A, definisjonsmengden.
+\\ \\
+Ved å si at for enhver $y \in B$ finnes én og bare én $x \in A$ slik at $f(x) = y$ beskriver vi både at enhver verdi i B skal ha en verdi i A som oppfyller surjektivitet, og at det finnes kun én og bare én tilordning av dette, oppfyller injektivitet.
+
+\subsection*{Oppgave 3.5}
+\(f : \mathbb{R} \rightarrow B \text{ gitt ved } f(x) = x^2\)
+\\ - Ved å si at $B = [0, \infty)$ så gjør vi funksjonen surjektiv. 
+\\ - Dette er fordi hadde vi hatt $B = \mathbb{R}$ kunne vi aldri fått negative tall. 
+\\ - Med ingen negative, kan vi bruke alle relle tall til å få et resultat som er enten 0 eller positivt.
+\\ - Den er fortsatt ikke injektiv, fordi vi kan fortsatt sette inn negative tall, fordi $A = \mathbb{R}$, og pga $x^2$ så resulterer et tilsvarende positivt og negativt tall det samme.
+
+\subsection*{Oppgave 3.6}
+
+Surjektivitet : En funksjon $f : A \rightarrow B$ er surjektiv hvis det for alle $y \in B$, finnes en $x \in A$ slik at $f(x) = y$
+\\
+Ved å si at verdiområdet B og verdimengden til funksjonen er like, sier vi at alle elementer i B skal være 'truffet', i andre ord ha en x slik at y er i verdimengden
+
+\subsection*{Oppgave 3,7}
+\newpage
+
+\section*{Kapittel 4}
+
+\subsection*{Oppgave 4.1}
+Er følgende utsagn, predikat, eller ingen?
+
+\begin{enumerate}[(a)]
+    \item $2 \in \mathbb{N}$ \\ Dette er et utsagn, og den er sann.
+    \item \say{Alle partall er delelig med 2} \\
+    Dette er et utsagn, og er sant fordi det følger definisjonen av partall.
+    \item \say{Det finnes liv på andre planeter} \\
+    Dette er et utsagn, og er umulig å si sann eller usann.
+    \item $3x + 8 = 17$ \\
+    Dette er et predikat, på grunn av variabelen x, og vi kan derfor ikke si noe mer om det.
+    \item \say{Mengdene $\mathbb{N}$ og $\mathbb{Z}$ er polymorfiale, men ikke $\mathbb{R}$} \\
+    
+\end{enumerate}
+
+\end{document}

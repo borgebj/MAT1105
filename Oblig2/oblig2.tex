@@ -1,0 +1,327 @@
+\documentclass{article}
+\title{MAT1105 ukesoppgaver KMG}
+\author{borgebj}
+\date{}
+
+\usepackage[norsk]{babel}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[a4paper, top=1in, bottom=1in, left=1in, right=1in]{geometry}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{enumerate}
+\usepackage{dirtytalk}
+\usepackage{colortbl}
+\usepackage{xcolor} 
+\usepackage{amsmath}
+\geometry{margin=1in} % Adjust margin as needed
+
+
+
+\setlength{\parskip}{2em}
+\setlength{\parindent}{0pt}
+
+
+\begin{document}
+
+\maketitle
+
+\section*{Kapittel 4}
+\subsection*{Oppgave 4.4}
+
+La A og B være mengder, og la P være utsanget \(A \subseteq B\)
+
+\( A \subseteq B = \) \\ \say{A er en delmengde av B} eller \say{Alt som er i A er også i B}. \\ \\
+Det vil da si at \( \neg P \) = \\ \say{A er ikke en delmengde av B} eller \say{Ikke alt i A også er med i B} \\
+
+
+Uttrykker følgende utsagn \(\neg P\) ?
+
+\begin{enumerate}[(a)]
+    \item \textbf{\(B \subseteq A\)}
+    \begin{enumerate}[-]
+        \item \textbf{Nei},
+        \item \( (B \subseteq A) \quad = \quad (A \subseteq B) \quad \neq \quad \neg (A \subseteq B)\)
+    \end{enumerate}
+    \item \textbf{\(B \in A\)}
+    \begin{enumerate}[-]
+        \item \textbf{Nei},
+        \item At B er i A er ikke det samme som å si at A ikke er delmengde av B.
+    \end{enumerate}
+    \item \textbf{\(A = \emptyset\)}
+    \begin{enumerate}[-]
+        \item \textbf{Nei}, 
+        \item Hvis A er det tomme settet, så er P alltid sann.
+        \item Dette er fordi den tomme mengden er delmengde av alle mengder.
+        \item Derfor holder ikke \(\neg P\)
+    \end{enumerate}
+    \item \textbf{\(B = \emptyset\)}
+    \begin{enumerate}[-]
+        \item Svaret avhenger av mengden A.
+        \item Hvis \(A = \emptyset\) så er svaret \textbf{Nei}, fordi \(P = \emptyset (A) \subseteq \emptyset(B)\). Og da gjelder ikke \(\neg P\)
+        \item Hvis \(A \neq \emptyset\) så er svaret \textbf{Ja}, fordi en ikke-tom delmengde A kan ikke være en delmengde av den tomme mengden B. Og da gjelder \(\neg P\)
+    \end{enumerate}
+    \newpage
+    \item \textbf{\textit{Det finnes en x $\in A \textit{ slik at } x \in B$}}
+    \begin{enumerate}[-]
+        \item \textbf{Nei},
+        \item Samme som å si: \say{Det finnes et element som er med i både A og B}
+        \item \(A \subseteq B \text{ og dermed } \neg (A \subseteq B)\) sier noe om hvordan \underline{hele} mengdene A og B oppfører seg.
+        \item Denne påstanden beskriver et tilfelle hvor det finnes et element som er i begge, men sier ingenting om hele mengden A.
+    \end{enumerate}
+    \item \textbf{\textit{Det finnes en x $\in A \textit{ slik at } x \notin B$}}
+    \begin{enumerate}[-]
+        \item \textbf{Ja},
+        \item Samme som å si: \say{Det finnes et element som er med i A, men ikke i B}
+        \item Denne påstanden bekrefter at A ikke er en delmengde av B, og dermed at \textbf{\(\neg P er sann\)}
+    \end{enumerate}
+\end{enumerate}
+
+\subsection*{Oppgave 4.6}
+Hvorfor er ikke \( (P \wedge Q) \vee R \text{ og } P \wedge (Q \vee R) \text{ ikke like. }\)
+
+\begin{enumerate}[-]
+    \item Hovedsakelig så er de ikke forskjellige på grunn av den ytre konnektiven. 
+    \item I utsagnslogisk setninger som disse er det alltid det ytterste konnektivet. 
+    \item I første tilfellet så er $\vee$ - \say{eller} konnektivet ytterst. 
+\end{enumerate}
+
+\begin{enumerate}[-]
+    \item I andre tilfellet så er $\wedge$ - \say{og} konnektivet ytterst.
+    \item Vi kan se hvordan dette spiller en rolle i sannhetsverditabellene under, hvor sanne tilordninger er farget grått:
+
+\end{enumerate}
+
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    % Section 1
+    \begin{tabular}{c c c | c c c c c}
+        $P$ & $Q$ & $R$ & $(P$ & $\wedge$ & $Q)$ & $\vee$ & $R$ \\
+        \hline
+        0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \rowcolor{lightgray}
+        0 & 0 & 1 & 0 & 0 & 0 & 1 & 1 \\
+        0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 \\
+        \rowcolor{lightgray}
+        0 & 1 & 1 & 0 & 0 & 1 & 1 & 1 \\
+        1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+        \rowcolor{lightgray}
+        1 & 0 & 1 & 1 & 0 & 0 & 1 & 1 \\
+        \rowcolor{lightgray}
+        1 & 1 & 0 & 1 & 1 & 1 & 1 & 0 \\
+        \rowcolor{lightgray} 
+        1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+    \end{tabular}
+    
+    \vspace{1em}
+
+    \underline{Sann når:}
+    \begin{enumerate}[(i)]
+    \centering
+        \item P = 0, Q = 0, R = 1
+        \item P = 0, Q = 1, R = 1
+        \item P = 1, Q = 0, R = 1
+        \item P = 1, Q = 1, R = 0
+        \item P = 1, Q = 1, R = 1
+    \end{enumerate}
+\end{minipage}
+\hspace{1em} % Horizontal space between the minipages
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    
+    % Section 2
+    \begin{tabular}{c c c | c c c c c}
+        $P$ & $Q$ & $R$ & $P$ & $\wedge$ & $(Q$ & $\vee$ & $R)$ \\
+        \hline
+        0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        0 & 0 & 1 & 0 & 0 & 0 & 1 & 1 \\
+        0 & 1 & 0 & 0 & 0 & 1 & 1 & 0 \\
+        0 & 1 & 1 & 0 & 0 & 1 & 1 & 1 \\
+        1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+        \rowcolor{lightgray}
+        1 & 0 & 1 & 1 & 1 & 0 & 1 & 1 \\
+        \rowcolor{lightgray} 
+        1 & 1 & 0 & 1 & 1 & 1 & 1 & 0 \\
+        \rowcolor{lightgray} 
+        1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+    \end{tabular}
+
+    \vspace{1em}
+
+    \underline{Sann når:}
+    \begin{enumerate}[(i)]
+    \centering
+        \item P = 1, Q = 0, R = 1
+        \item P = 1, Q = 1, R = 0
+        \item P = 1, Q = 1, R = 1
+    \end{enumerate}
+\end{minipage}
+
+\newpage
+
+\subsection*{Oppgave 4.8}
+La \textit{x} være et tall. 
+\[\text{\say{Hvorfor er $2x-3 = 5 \Longleftrightarrow x = 4$ Sann?}}\] \\
+
+\( A \Longleftrightarrow B\) betyr at A og B er \textit{ekvivalente}. \\
+Det vil si at påstanden kun er sann om enten både A og B er sann, eller om både A og B er usann.
+\\ \\
+Dette utsagnet er sant, fordi både venstre- og høyresiden er sanne.
+\begin{enumerate}[]
+    \item Venstresiden: \quad \quad \ \(2x - 3 = 5 \quad \rightarrow \quad 2x = 8 \quad \rightarrow \quad x = 4\)
+    \item Høyresiden: \quad \quad \quad \(x = 4\)
+\end{enumerate}
+
+I tilfellet hvor enten både venstresiden og høyresiden er usanne, vil hele påstanden også være sann, fordi det er slik ekvialens fungerer. \\ \\
+Dersom kun én av sidene var sann, ville hele påstanden vært usann. \\
+For eksempel hadde det gitt mening at påstanden var usann hvis vi sa: \(\)
+
+\subsection*{Oppgave 4.11}
+
+\(\neg((\neg P \vee Q) \wedge (\neg Q \vee R))\)
+
+De Morgans lover forteller at:
+\begin{enumerate}
+    \item $\neg (P \vee Q) \Longleftrightarrow \neg P \wedge \neg Q$
+    \item $\neg (P \wedge Q) \Longleftrightarrow \neg P \vee \neg Q$
+\end{enumerate}
+
+Ved hjelp av disse kan vi transformere uttrykket videre:
+
+\begin{enumerate}
+    \item $\neg ( \neg (P \wedge \neg Q) \wedge \neg (Q \wedge \neg R) )$
+    \item $ (P \vee \neg Q) \vee (Q \wedge \neg R)$
+    \item $\neg (\neg P \wedge Q) \vee \neg (\neg Q \vee R)$
+    \item $\neg ((\neg P \wedge Q) \wedge (\neg Q \vee R))$
+\end{enumerate}
+
+Vi kan se at uttrykket kan bli mange og forskjellige.  \\
+Tar vi utgangspunkt i for eksempel det andre uttryket, nr 2, så står det: \\ \\
+\quad \say{Det er slik at enten (P eller ikke Q), eller (Q og ikke R)} \\ \\
+
+Denne setningen sier ikke mye i seg selv, hovedsakelig fordi utsagnsvariablene våre P, Q og R ikke er tildelt noen utsagn.. \\ \\
+Lager vi en sannhetsverditabell for det originale uttrykket kan vi se litt av tilordningene som gjør den sann: 
+
+\hspace{7.4em} 
+
+\(\neg((\neg P \vee Q) \wedge (\neg Q \vee R))\)
+
+\begin{tabular}{c c c | c c c c c c c c c c}
+    $P$ & $Q$ & $R$ & $\neg$ & $((\neg$ & $P$ & $\vee$ & $Q)$ & $\wedge$ & $(\neg$ & $Q$ & $\vee$ & $R))$\\
+    \hline
+    0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 1 & 1 & 0 & 1 & 0 \\
+    0 & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 1 & 1 & 0 & 1 & 1 \\
+    \rowcolor{lightgray}
+    0 & 1 & 0 & 1 & 1 & 0 & 1 & 1 & 0 & 0 & 1 & 0 & 0 \\
+    0 & 1 & 1 & 0 & 1 & 0 & 1 & 1 & 1 & 0 & 1 & 1 & 1 \\
+    \rowcolor{lightgray}
+    1 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 1 & 0 \\
+    \rowcolor{lightgray}
+    1 & 0 & 1 & 1 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 1 & 1 \\
+    \rowcolor{lightgray}
+    1 & 1 & 0 & 1 & 0 & 1 & 1 & 1 & 0 & 0 & 1 & 0 & 0 \\
+    1 & 1 & 1 & 0 & 0 & 1 & 1 & 1 & 1 & 0 & 1 & 1 & 1 \\
+\end{tabular}
+
+\underline{Sann når:}
+\begin{enumerate}[(i)]
+    \item P = 0, Q = 1, R = 0
+    \item P = 1, Q = 0, R = 0
+    \item P = 1, Q = 1, R = 1
+\end{enumerate}
+
+\newpage
+\subsection*{Oppgave 4.14}
+
+Negasjon av hvert følgende uttrykk, samt tolkninger:
+
+\begin{enumerate}[(a)]
+    \item \textbf{\say{Alle sauer har hvit ull}}    
+    \begin{enumerate}[-]
+        \item \say{Det finnes en som er sau og som ikke har ull.}
+        \item La S(x) stå for "x er en sau"
+        \item La U(x) stå for "x har ull"
+        \item $\exists x (S(x) \wedge \neg I(x))$
+    \end{enumerate}
+    \item \textbf{\say{Det finnes mennesker som ikke liker is til dessert}}
+    \begin{enumerate}[-]
+        \item \say{Alle mennesker like is til dessert}
+        \item La M(x) stå for "x er et menneske"
+        \item La L(x) stå for "x liker is til dessert"
+        \item $\forall x (M(x) \wedge L(x))$
+    \end{enumerate}
+    \item \textbf{\say{Det regner alltid i Bergen}}
+    \begin{enumerate}[-]
+        \item \say{Det finnes en dag det ikke regner i Bergen}
+        \item La R(x) stå for "det regner i Bergen på dag x"
+        \item $\exists x \neg Rx$
+    \end{enumerate}
+    \item \say{Alle myntsamlere har en romersk mynt i samlingen}
+    \begin{enumerate}[-]
+        \item \say{Det finnes en myntsamler som ikke har en romersk mynt}
+        \item La R(y) stå for "y er en romersk mynt"
+        \item La M(x) stå for "x er en myntsamler"
+        \item La H(x, y) stå for "x har mynten y"
+        \item $\exists x (M(x) \land \forall y (R(y) \rightarrow \neg H(x, y)))$
+        \item Blir noe lignende: \say{det finnes en x, hvor x er en myntsamler, og for alle y, hvis y er en romersk mynt så har ikke x y}
+    \end{enumerate}
+    \item \textbf{\say{Noen, men ikke alle, svensker har blondt når}}
+    \begin{enumerate}[-]
+        \item La S(x) stå for "x er svensk"
+        \item La B(x) stå for "x er blond"
+        \item Samme som å si $\exists x (S(x) \land B(x))$
+        \item Med reglene for negasjon får vi:
+        \item \say{Det finnes ingen som er både svensk og blond}
+        \item $\forall x \neg(S(x) \land B(x))$
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+
+\subsection*{Oppgave 4.15}
+\say{Vis at $P \Leftrightarrow Q$ er det samme som $(P \Leftrightarrow Q) \land (\neg P \Rightarrow \neg Q)$}
+
+En måte å vise dette på er å sette opp sannhetsverditabellene for begge: \\
+(jeg har fargelagt både de sanne radene grå, og det ytterste konnektivet så det skal være enklere å se)
+
+\begin{minipage}[t]{0.48\textwidth} 
+    \begin{tabular}{c c | c >{\columncolor[gray]{0.8}}c c}
+    $P$ & $Q$ & $P$ & $\Leftrightarrow$ & $Q$ \\
+    \hline
+    \rowcolor{lightgray}
+     0 & 0 & 0 & 1 & 0 \\
+     0 & 1 & 0 & 0 & 1\\
+     1 & 0 & 1 & 0 & 0 \\
+     \rowcolor{lightgray}
+     1 & 1 & 1 & 1 & 1\\
+    \end{tabular} 
+    \\ 
+    \begin{enumerate}
+    \item P = 0, Q = 0
+    \item P = 1, Q = 1
+    \end{enumerate}
+\end{minipage}
+\hspace{0.5em}
+\begin{minipage}[t]{0.48\textwidth} 
+    \begin{tabular}{c c | c c c >{\columncolor[gray]{0.8}}c c c c c c }
+    $P$ & $Q$ & $(P$ & $\Leftrightarrow$ &  $Q)$ & $\land$ & $(\neg$ & $P$ & $\Rightarrow$ & $\neg$ & $Q)$\\
+    \hline
+    \rowcolor{lightgray}
+     0 & 0 & 0 & 1 & 0 & 1 & 1 & 0 & 1 & 1 & 0  \\
+     0 & 1 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 1 \\
+     1 & 0 & 1 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 0 \\
+     \rowcolor{lightgray}
+     1 & 1 & 1 & 1 & 1 & 1 & 0 & 1 & 1 & 0 & 1\\
+    \end{tabular} 
+    \\ 
+    \begin{enumerate}
+    \item P = 0, Q = 0
+    \item P = 1, Q = 1
+    \end{enumerate}
+\end{minipage}
+
+Begge uttrykk viser seg å være sanne på samme tilordninger av sannhetsverdier, nemlig når både P og Q er usann, og når både P og Q er sann.
+
+
+\end{document}

@@ -1,0 +1,282 @@
+\documentclass{article}
+\date{}
+
+\usepackage[norsk]{babel}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[a4paper, top=1in, bottom=1in, left=1in, right=1in]{geometry}
+\usepackage{subcaption}
+\usepackage{amsfonts}
+\usepackage{dirtytalk}
+\usepackage{enumerate}
+
+\newcommand{\vect}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+
+\setlength{\parskip}{2em}
+\setlength{\parindent}{0pt}
+\linespread{1}
+\begin{document}
+
+\section*{Seksjon 1.9}
+
+\subsection*{Oppgave 1}
+
+Lineæravbildning \(T : \mathbb{R}^3 \rightarrow \mathbb{R}^2 \quad T(x,y,z) = \begin{pmatrix}
+    2x - y + z \\ -x + y -3z
+\end{pmatrix}\) 
+
+\begin{description}
+    \item \(e_1 = (1, 0, 0) \rightarrow T(e_1) = (2 - 0 + 0, -1 + 0 - 0) = (2, -1) = T(e_1)\)
+    \item \(e_2 = (0, 1, 0) \rightarrow T(e_2) = (0 -1 + 0, 0 + 1 - 0) = (-1, 1) = T(e_2)\)
+    \item \(e_3 = (0, 0, 1) \rightarrow T(e_3) = (0 - 0 + 1, 0 + 0 - 3) = (1, -3) = T(e_3)\)
+\end{description}
+
+Matrisen til lineæravbildningen er da: \\ \\
+\(\underline{\underline{A = \begin{pmatrix}
+    2 & -1 & 1 \\ -1 & 1 & 3
+\end{pmatrix}}}\)
+
+\hfill
+
+\subsection*{Oppgave 2}
+
+\(T : \mathbb{R}^2 \rightarrow \mathbb{R}^4\) som tilfredsstiller\\ \\
+\(T(e_1) = \begin{pmatrix}
+    -1 \\ 2 \\ -3 \\ 4
+\end{pmatrix}\) \ og \ \(T(e_2) = \begin{pmatrix}
+    0 \\ -2 \\ 4 \\ 7
+\end{pmatrix}\)
+\\ \\ \\ 
+Funksjonen tar inn en vektor i planet og gir ut en vektor i det 4-dimensjonelle rommet. \\ 
+Detvil si at $e_1$ og $e_2$ er første og andre søyle i matrisen A.\\ \\
+Da er matrisen til T, \quad \(\underline{\underline{A = 
+\begin{pmatrix}
+    -1 & 0 \\ 2 & -2 \\ -3 & 4 \\ 4 & 7
+\end{pmatrix}}}\)
+
+\newpage
+
+\subsection*{Oppgave 3}
+\say{\(a, b \in \mathbb{R}^2, \quad T : \mathbb{R}^2 \rightarrow \mathbb{R}^2\) tilfredsstiller \(\quad 
+T(a) = \begin{pmatrix}
+    -2 \\ 1
+\end{pmatrix}\) \ og \ 
+\(T(b) = \begin{pmatrix}
+    0 \\ 3
+\end{pmatrix}\)}
+
+Egenskapen av en lineæravbildning er at:
+\begin{enumerate}
+    \item \(T(a+b) = T(a) + T(b)\)
+    \item \(T(\textbf{c}x) = \textbf{c}T(x)\), for $c \in \mathbb{R}$
+\end{enumerate}
+
+\(T(3a-2b) \text{ kan skrives som: } \\\\ T(3a + (-2b)) \quad=\quad T(3a) + T(-2b) \quad=\quad 3T(a) + (-2)T(b) \quad=\quad 3T(x) - 2T(b)\)
+
+\(3T(a) = 3\cdot\begin{pmatrix}
+    -2 \\ 1
+\end{pmatrix} = \begin{pmatrix}
+    -6 \\ 3
+\end{pmatrix}
+\quad \quad \quad
+-2T(b) = -2\cdot\begin{pmatrix}
+    0 \\ 3
+\end{pmatrix} = \begin{pmatrix}
+    0 \\ -6
+\end{pmatrix}
+\quad \Leftrightarrow\\ \\ \\ \Leftrightarrow \quad
+3T(x)-2T(b) \quad=\quad \begin{pmatrix}
+    -6 \\ 3
+\end{pmatrix} + \begin{pmatrix}
+    0 \\ -6
+\end{pmatrix} \quad=\quad \underline{\underline{\begin{pmatrix}
+    -6 \\ -3
+\end{pmatrix} \ = \ T(3a-2b)}}\)
+
+\subsection*{Oppgave 4}
+
+\(T : \mathbb{R}^2 \rightarrow \mathbb{R}^2\) avbilder hvert punkt på sitt speilbilde om \underline{y-aksen} \\\\
+dvs tar inn $(2, 3)$ og får ut $(-2, 3)$ \\\\
+Samme som $T(x,y) = (-x, y)$ \\\\
+Dvs. $T(x, y) = A(x, y) = (-x, y)$
+\begin{enumerate}[]
+    \item Speiling av x-aksen endrer fortegn, så $T(e_1) = \begin{pmatrix}
+        -1 \\ 0
+    \end{pmatrix}$
+    \item Speiling av y-aksen endrer ikke fortegn, så $T(e_2) = \begin{pmatrix}
+        0 \\ 1
+    \end{pmatrix}$
+\end{enumerate}
+Legger vi søylene sammen får vi matrisen \underline{\underline{$A = \begin{pmatrix}
+    -1 & 0 \\ 0 & 1
+\end{pmatrix}$}}
+
+\newpage
+\subsection*{Oppgave 5}
+\(T : \mathbb{R}^2 \rightarrow \mathbb{R}^2\) fordobler alle annenkomponenter, men endrer ikke føreskomponenter \\\\
+Dvs tar inn $(2, 3)$ og får ut $(2, 6)$
+
+\begin{enumerate}[]
+    \item $T(e_1) = \vect{1 \\ 0}$
+    \item $T(e_2) = \vect{0 \\ 2}$
+\end{enumerate}
+Vi setter sammen søylene til én matrise A, som blir \underline{\underline{\(A = \begin{pmatrix}
+    1 & 0 \\ 0 & 2
+\end{pmatrix}\)}}
+
+\subsection*{Oppgave 6}
+\(T : \mathbb{R}^2 \rightarrow \mathbb{R}^2\) gjør alle vektorer dobbelt så lange og dreier dem en vinkel $\theta$ i positiv retning
+
+Dreining av en vinkel $\theta$ i positiv retning skjer ved:
+\begin{enumerate}[]
+    \item \(T(e_1) = \vect{\cos{\theta}) \\ \sin{\theta}}\), fordobling gir \(T(e_1) = \vect{2\cos{\theta} \\ 2\sin{\theta}}\)
+    \item \(T(e_2) = \vect{-\sin{\theta}) \\ \cos{\theta}}\), fordobling gir \(T(e_1) = \vect{-2\sin{\theta} \\ 2\cos{\theta}}\)
+\end{enumerate}
+Vi setter sammen søylene til én matrise A, som blir \underline{\underline{$A = \begin{pmatrix}
+    2\cos{\theta} & -2\sin{\theta} \\ 2\sin{\theta} & 2\cos{\theta}
+\end{pmatrix}$}}
+
+\subsection*{Oppgave 7}
+\(T : \mathbb{R}^3 \rightarrow \mathbb{R}^3\) avbilder alle vektorer på sin projeksjon ned i xy-planet \\\\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+\section*{Egenverdier og egenvektorer}
+
+For å finne egenverdi:
+
+$(\lambda I_n - A)v = 0$
+\\ 
+hvor $\lambda$ er egenverdien, og egenvektorer finnes ved å løse determinanten til matrisen man får.
+
+1) Finn egenverdiene og egenvektorene til matrisene:
+
+\(A = \begin{pmatrix}
+    2 & 1 \\ 1 & 2)
+\end{pmatrix}\)
+
+\(\lambda \cdot I_2 = \lambda \cdot \begin{pmatrix}
+1 & 0 \\ 0 & 1
+\end{pmatrix} = \begin{pmatrix}
+    \lambda & 0 \\ 0 & \lambda
+\end{pmatrix}\)
+
+\(\lambda I_n - A = \begin{pmatrix}
+    \lambda & 0 \\ 0 & \lambda 
+\end{pmatrix} - \begin{pmatrix}
+    2 & 1 \\ 1 & 2
+\end{pmatrix} = \begin{pmatrix}
+    \lambda - 2 & -1 \\ -1 & \lambda - 2
+\end{pmatrix}\)
+
+\(det\begin{pmatrix}
+    \lambda - 2 & -1 \\ -1 & \lambda -2
+\end{pmatrix} = (\lambda - 2)^2 - (-1 \cdot -1) \quad = \quad \lambda^2 - 4\lambda + 4 - 1 \quad = \quad \lambda ^2 - 4\lambda + 3 \\ \\ \\ (x-3)(x-1) = 0 \quad \Rightarrow \quad x = 1 \vee x = 3\)
+
+\hfill
+
+Egenvektoren v1 blir da: 
+\(\lambda = 1 \quad \Rightarrow \quad Av_1 = 1v_1\)
+\\ \\ \\
+\(v_1 = \begin{pmatrix}
+    x \\ y
+\end{pmatrix} 
+\)
+da blir 
+\(Av_1 = 3v_1 \Leftrightarrow \begin{pmatrix}
+    2 & 1 \\ 1 & 2
+\end{pmatrix}\begin{pmatrix}
+    x \\ y
+\end{pmatrix} = 3 \begin{pmatrix}
+    x \\ y
+\end{pmatrix}\)
+\\ \\ \\
+\(\begin{pmatrix}
+    2x + y \\ x + 2y
+\end{pmatrix} = \begin{pmatrix}
+    3x \\ 3y
+\end{pmatrix}\)
+\[2x + y = 3x \quad \rightarrow \quad y = x\]
+\[x + 2y = 3y \quad \rightarrow \quad x = y\]
+Vi velger \(x = 1 \ og \ y = 1\)
+Egenvektoren blir da \(v_1 = \begin{pmatrix}
+    1 \\ 1
+\end{pmatrix}\)
+
+\newpage
+
+2)
+
+\[ 
+\begin{pmatrix}
+    \lambda & 0 \\ 0 & \lambda
+\end{pmatrix} -
+\begin{pmatrix}
+    1 & 4 \\ 1 & 1
+\end{pmatrix} = \begin{pmatrix}
+    \lambda - 1 & -4 \\ -1 & \lambda - 1
+\end{pmatrix}\] 
+\[det\begin{pmatrix}
+    \lambda -1 & -4 \\ -1 & \lambda -1
+\end{pmatrix} \quad = \quad (\lambda - 1)^2 - 4 \quad = \quad \lambda^2+2\lambda -3 = 0 \quad \Leftrightarrow \quad (\lambda+3)(\lambda-1) = 0\]
+\[\lambda = -3 \vee \lambda = 1\]
+
+For $\lambda = 1$ hvor $Av = \lambda v$ blir $Av = v$\\
+\[Av = \begin{pmatrix}
+    1 & 4 \\ 1 & 1
+\end{pmatrix} \begin{pmatrix}
+    x \\ y
+\end{pmatrix} = \begin{pmatrix}
+    x \\ y
+\end{pmatrix}\]
+
+\[x + 4y = x, \quad 4y = 0, \quad y = 0\]
+\[x + y = y, \quad \quad \quad \quad \quad \quad x = 0\]
+
+Egenvektor = $\begin{pmatrix}
+    0 \\ 0
+\end{pmatrix}$
+ 
+\( det\begin{pmatrix}
+    \lambda - 4 & - 3 \\ -1 & \lambda - 2
+\end{pmatrix} = (\lambda - 4)(\lambda - 2) - 3 = \lambda^2 -2\lambda -4\lambda +8 = \lambda^2 -6\lambda + 8\) \\ \\  \\
+\(\lambda^2 -6\lambda + 8 = 0 \quad \Leftrightarrow \quad (\lambda-4)(\lambda-2) = 0 \quad \Leftrightarrow \quad \lambda = 4 \vee \lambda = 2\)
+
+For $\lambda = 2$ hvor $Av = \lambda$ blir $Av = 2v$
+
+$Av = 2v = \begin{pmatrix}
+    4x + 3y \\ x +2y
+\end{pmatrix}
+=
+\begin{pmatrix}
+        2x \\ 2y
+\end{pmatrix}
+\quad \Leftrightarrow 
+4x+3y = 2x \wedge x+2y = 2y \\ \\
+3y = -2x \wedge x = 0 \\ \\
+y = (2/3)x \wedge x = 0
+$
+\end{document}
+

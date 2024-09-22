@@ -1,0 +1,201 @@
+\documentclass{article}
+\date{}
+
+\usepackage[norsk]{babel}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[a4paper, top=1in, bottom=1in, left=1in, right=1in]{geometry}
+\usepackage{subcaption}
+\usepackage{amsfonts}
+\usepackage{dirtytalk}
+\usepackage{enumerate}
+
+% vertical vector = \vect{...}
+\newcommand{\vect}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+% double underline is \uu{...}
+\newcommand{\uu}[1]{\underline{\underline{#1}}}
+% double bold underline is \uub{...}
+\newcommand{\uub}[1]{\underline{\underline{\textbf{#1}}}}
+% align counter reset
+\AtBeginEnvironment{align}{\setcounter{equation}{0}}
+% arrows
+\newcommand{\lra}{\quad\Longrightarrow\quad}
+% equivalent = \eq 
+\newcommand{\eq}{\quad\Longleftrightarrow\quad}
+% 3x space
+\newcommand{\trip}{\ \ \ }
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\section*{Seksjon 4.1}
+
+\subsection*{Oppgave 1}
+Løsninger til ligningsystemet:
+\begin{align}
+    x + 2y - z = 3 \\
+    2x + 3y - 3z = -1 \\
+    -x + 2y + 3z = 1 
+\end{align}
+
+(1), (2), og (3) betegner hver linje.
+
+Trinn 1 (isoler x): \\ \\
+$(2) = (2) + (3)\cdot2 \lra [2x+3y-3z=-1]\ +\ [-2x+4y+6z=2] \lra [7y+3z=1]$ \\ 
+$(3) = (3) + (1) \quad\, \lra [-x+2y+3z=1]\trip + \ [x+2y-z=3] \quad\ \ \lra [4z+2z=4]$
+
+
+\setcounter{equation}{0}
+\begin{align}
+    x + 2y - z = 3 \\
+    7y + 3z = 1 \\
+    4y + 2z = 4
+\end{align}
+
+Trinn 2 (isoler y): \\ \\
+$(3) = 7\cdot(3)\ - 4\cdot(2) \lra [28y+14z=28]\ -\ [28y+12z=4] \lra [2z=24]$
+
+\setcounter{equation}{0}
+\begin{align}
+    x + 2y -z = 3 \\
+    7y + 3z = 1 \\
+    2z = 24
+\end{align}
+
+Løser: \\\\
+\begin{align*}
+    2z = 24 \eq z = 12 \\
+    7y + 3\cdot12 = 1 \eq 7y = -35 \eq y = -5 \\
+    x + 2\cdot-5 -(12) = 3 \eq x-10+12 = 3 \eq x = 25
+\end{align*}
+
+\[\uu{z = 12}, \qquad \uu{y = -5}, \qquad \uu{x = 25}\]
+
+\newpage
+\subsection*{Oppgave 3}
+Løsninger til ligningsystemet:
+
+\begin{align}
+    2x - 4y + 6z = -2 \\
+    -3x + 2y -z = 8 \\
+    x - 6y + 11z = 4
+\end{align}
+
+Trinn 1 (isoler x): \\\\
+$(1) = (1) - 2\cdot(3) \lra [2x-4y+6z=-2]\ +\ [-2x+12y-22z=-8] \lra [8y-16z = -10]$
+
+$(2) = (2) + 3\cdot(3) \lra [-3x+2y-z=8]\ \ \, +\ [3x-18y+33z=12]\quad \lra [-16y+32z = 20]$ 
+
+$(3) = (1)$ og $(1) = (3) \qquad$ (bytter 1 og 3)
+
+$(3) = (2)$ og $(2) = (3)$ \qquad (bytter 2 og 3)
+
+\begin{align}
+    x - 6y + 11z = 4 \\
+    8y - 16z = -10 \\
+    -16y + 32z = 20 
+\end{align}
+
+Trinn 2 (isoler y): \\\\
+$(3) = (3) + 2\cdot(2) \lra [-16y+32z=20] + [16y-32z = -20] \lra [0 = 0]$
+
+\begin{align}
+    x-6y+11z=4 \\
+    8y-16z=-10 \\
+    0 = 0
+\end{align}
+
+Løser: \\\\
+\begin{align}
+    0 = 0 \\
+    8y-16z = -10 \eq 8y = 16z-10 \eq y = 2z - \frac{5}{4} \\
+    x - 12z+\frac{15}{2} + 11z = 4 \eq x = z - \frac{7}{2} 
+\end{align}
+
+\[
+\uu{Z = fri variabel}, \qquad \uu{y= 2z-\frac{5}{4}}, \qquad \uu{x = z-\frac{7}{2}}
+\]
+\newpage
+\subsection*{Oppgave 4}
+Løsninger til ligningsystemet:
+
+\begin{align}
+    x-2y+3z = 1 \\
+    -x+y-2z=0 \\
+    -3x+5y-8z=2
+\end{align}
+
+Trinn 1 (isoler x): \\\\
+$(2) = (2) + (1) \trip \, \lra [-x+y-2z=0]\quad \ +\ [x-2y+3z=1]\ \, \lra [-y+z=0]$ \\
+$(3) = (3) + 3\cdot(1) \lra [-3x+5y-8z=2]\ +\ [3x-6y+9z=3] \lra [-y+z=5]$
+
+\begin{align}
+    x-2y+3z=1 \\
+    -y+z = 0 \\
+    -y+z=5
+\end{align}
+
+Løser: \\\\
+(2) og (3) motsier hverandre, så dette ligningsystemet går ikke.
+
+\section*{Seksjon 4.2}
+
+\subsection*{Opppgave 1}
+
+\begin{enumerate}[A=]
+    \item \( \begin{pmatrix} 1 & -2 & 3 \\ 0 & 1 & -1 \\ 0 & 0 & 1 \end{pmatrix} \) - Ja
+    \item \( \begin{pmatrix} 0 & 1 & 2 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{pmatrix} \) - Ja
+    \item \( \begin{pmatrix} 1 & 0 & 2 \\ 0 & 2 & 0 \\ 0 & 0 & 1 \end{pmatrix} \) - Nei (Pivot rad 2 er 2, ikke 1)
+    \item \( \begin{pmatrix} 1 & -2 & 0 & -1 \\ 0 & 0 & 1 & 1 \\ 0 & 0 & 0 & 1 \end{pmatrix} \) - Ja
+    \item \( \begin{pmatrix} 1 & 3 & -2 \\ 0 & 1 & -3 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{pmatrix} \) - Ja
+    \item \( \begin{pmatrix} 1 & -2 & 0 & -1 \\ 0 & 1 & 2 & 1 \\ 0 & 1 & 4 & -3 \end{pmatrix} \) - Nei (Pivot rad 3 er i samme kolonne som rad 2)
+\end{enumerate}
+
+
+
+
+
+\subsection*{Opppgave 2}
+
+\begin{enumerate}[A=]
+    \item \( 
+    \begin{pmatrix}
+        1&2&1\\-1&-3&2\\2&1&2
+    \end{pmatrix}\)
+
+    \item \(
+    \begin{pmatrix}
+        0&1&2\\1&1&2\\-2&1&3
+    \end{pmatrix}\)
+
+    \item \(
+    \begin{pmatrix}
+        1&1&-2&3\\2&1&3&0\\-1&0&-5&2
+    \end{pmatrix}
+    \)
+
+    \item \(
+    \begin{pmatrix}
+        1&2&1&1\\-1&3&-1&2\\1&12&1&7
+    \end{pmatrix}
+    \)
+    
+\end{enumerate}
+
+
+
+
+\subsection*{Opppgave 3}
+
+
+
+
+
+\subsection*{Opppgave 4}
+
+
+\end{document}
+
