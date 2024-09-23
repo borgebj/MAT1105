@@ -25,6 +25,9 @@
 \newcommand{\eq}{\quad\Longleftrightarrow\quad}
 % 3x space
 \newcommand{\trip}{\ \ \ }
+% relational equal
+\newcommand{\eqto}[1]{\overset{#1}{\sim}}
+
 
 \setlength{\parskip}{1em}
 \setlength{\parindent}{0pt}
@@ -164,17 +167,71 @@ Løser: \\\\
     \item \( 
     \begin{pmatrix}
         1&2&1\\-1&-3&2\\2&1&2
-    \end{pmatrix}\)
+    \end{pmatrix}
+    \eqto{(-1)(II + I)}
+    \begin{pmatrix}
+        1 & 2 & 1 \\
+        0 & 1 & -3 \\ 
+        2 & 1 & 2
+    \end{pmatrix}
+    \eqto{III + (-2)I}
+    \begin{pmatrix}
+        1 & 2 & 1 \\
+        0 & 1 & -3 \\
+        0 & -4 & -2 
+    \end{pmatrix}
+    \eqto{ -\frac{1}{14}(III + 4II) }
+    \uu{\begin{pmatrix}
+        1 & 2 & 1 \\
+        0 & 1 & -3 \\
+        0 & 0 & 1
+    \end{pmatrix}}
+    \)
 
     \item \(
     \begin{pmatrix}
         0&1&2\\1&1&2\\-2&1&3
-    \end{pmatrix}\)
+    \end{pmatrix}
+    \eqto{I\leftrightarrow II}
+    \begin{pmatrix}
+        1 & 1 & 2 \\
+        0 & 1 & 2 \\
+        -2 & 1 & 3
+    \end{pmatrix}
+    \eqto{II+(2)I}
+    \begin{pmatrix}
+        1 & 1 & 2 \\ 0 & 1 & 2 \\ 0 & 3 & 7
+    \end{pmatrix}
+    \eqto{(III+(-3)II)}
+    \uu{\begin{pmatrix}
+        1 & 1 & 2 \\ 0 & 1 & 2 \\ 0 & 0 & 1
+    \end{pmatrix}}
+    \)
 
     \item \(
     \begin{pmatrix}
         1&1&-2&3\\2&1&3&0\\-1&0&-5&2
     \end{pmatrix}
+    \eqto{II\leftrightarrow III}
+    \begin{pmatrix}
+        1 & 1 & -2&3\\-1&0&-5&2\\2&1&3&0
+    \end{pmatrix}
+    \eqto{II+I}
+    \begin{pmatrix}
+        1&1&-2&3\\0&1&-7&5\\2&1&3&0
+    \end{pmatrix}
+    \eqto{III+(-2)I}
+    \begin{pmatrix}
+        1&1&-2&3\\0&1&-7&5\\0&-1&7&6
+    \end{pmatrix}
+    \eqto{III+II} \\ \\
+    \begin{pmatrix}
+        1&1&-2&3\\0&1&-7&5\\0&0&0&11
+    \end{pmatrix}
+    \eqto{\frac{1}{11}III}
+    \uu{\begin{pmatrix}
+        1&1&-2&3\\0&1&-7&5\\0&0&0&1
+    \end{pmatrix}}
     \)
 
     \item \(
