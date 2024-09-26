@@ -238,6 +238,22 @@ Løser: \\\\
     \begin{pmatrix}
         1&2&1&1\\-1&3&-1&2\\1&12&1&7
     \end{pmatrix}
+    \eqto{II+I}
+    \begin{pmatrix}
+        1&2&1&1\\0&5&0&3\\1&12&1&7
+    \end{pmatrix}
+    \eqto{III-I}
+    \begin{pmatrix}
+        1&2&1&1\\0&5&0&3\\0&10&0&6
+    \end{pmatrix}
+    \eqto{III+(-2)II}
+    \begin{pmatrix}
+        1&2&1&1\\0&5&0&3\\0&0&0&0
+    \end{pmatrix}
+    \eqto{\frac{1}{5}II}\\ \\ \\
+    \uu{\begin{pmatrix}
+        1&2&1&1\\0&1&0&\frac{3}{5}\\0&0&0&0
+    \end{pmatrix}}
     \)
     
 \end{enumerate}
@@ -247,11 +263,402 @@ Løser: \\\\
 
 \subsection*{Opppgave 3}
 
+\(A = \begin{cases}
+    x-y+2z=1\\2x+y+z=1\\-2x-y+z=0
+\end{cases}\)
+\\ \\ \\
+\(A' = \begin{pmatrix}
+    1&-1&2&1\\2&1&1&1\\-2&-1&1&0
+\end{pmatrix}
+\eqto{III+II}
+\begin{pmatrix}
+    1&-1&2&1\\2&1&1&1\\0&0&2&1
+\end{pmatrix}
+\eqto{II+(-2)I}
+\begin{pmatrix}
+    1&-1&2&1\\0&3&-3&-1\\0&0&2&1
+\end{pmatrix}
+\eqto{\frac{1}{3}II\\ \frac{1}{2}III}
+\begin{pmatrix}
+    1&-1&2&1\\0&1&-1&-\frac{1}{3}\\0&0&1&\frac{1}{2}
+\end{pmatrix}
+\) \\ \\
 
+dvs.
+\(\begin{cases}
+    z = \frac{1}{2} \\
+    y-z=-\frac{1}{3} \ \quad \eq y -\frac{1}{2}=-\frac{1}{3} \ \, \quad \eq y = \frac{1}{2}-\frac{1}{3} \ \ \quad \eq y = \frac{1}{6} \\
+    x-y+2z=1 \eq x-\frac{1}{6}+2\frac{1}{2}=1 \eq x+1-1 = \frac{1}{6} \, \eq x = \frac{1}{6}
+\end{cases}\)
+\\ \\ \\
+\[\uu{x = \frac{1}{6}}, \qquad \uu{y = \frac{1}{6}}, \qquad \uu{z = \frac{1}{2}}\]
+\newpage
 
 
 
 \subsection*{Opppgave 4}
+\(A = \begin{cases}
+    3x-4y+z=2\\x-2y=1\\-2x+2y-z=-1
+\end{cases}\)
+\\ \\ \\
+\(A' = \begin{pmatrix}
+    3&-4&1&2\\1&-2&0&1\\-2&2&-1&-1
+\end{pmatrix}
+\eqto{I\leftrightarrow II}
+\begin{pmatrix}
+    1&-2&0&1\\3&-4&1&2\\-2&2&-1&-1
+\end{pmatrix}
+\eqto{III+(2)I}
+\begin{pmatrix}
+    1&-2&0&1\\3&-4&1&2\\0&-2&-1&1
+\end{pmatrix}
+\eqto{II+(-3)I}
+\begin{pmatrix}
+    1&-2&0&1\\0&2&1&-1\\0&-2&-1&1
+\end{pmatrix} \\ \\ \\
+\eqto{III+II}
+\begin{pmatrix}
+    1&-2&0&1\\0&2&1&-1\\0&0&0&0
+\end{pmatrix}
+\eqto{\frac{1}{2}II}
+\begin{pmatrix}
+    1&-2&0&1\\0&1&\frac{1}{2}&-\frac{1}{2}\\0&0&0&0
+\end{pmatrix}
+\)
+
+\(\begin{cases}
+    z \in \mathbb{R} \\
+    y + \frac{Z}{2} = -\frac{1}{2} \eq y = -\frac{1}{2} - \frac{z}{2} \\
+    x -2(-\frac{z}{2}-\frac{1}{2}) = 1 \eq x + \frac{2z}{2} + \frac{2}{2} = 1 \eq x + z + 1 = 1 \eq x = -z
+\end{cases}\)
+\\ \\ \\
+\[\uu{x = -z}, \qquad \uu{y = -\frac{z}{2}-\frac{1}{2}}, \qquad \uu{z \in \mathbb{R}} \text{ (z kan velges fritt)}\]
+
+\subsection*{Oppgave 10}
+
+\(A =
+\begin{cases}
+    a+b+c=120 \\
+    0.6a+0.3b+0.6c=a \\
+    0.3a+0.5b+0.1c=b \\
+    0.1a+0.2b+0.3c=c 
+\end{cases}
+=
+\begin{cases}
+    a+b+c=120 \\
+    -0.4a+0.3b+0.6c=0 \\
+    0.3a-0.5b+0.1c=0 \\
+    0.1a+0.2b-0.7c=0 
+\end{cases}
+\\ \\ \\
+A'= \begin{pmatrix}
+    1&1&1&120\\
+    -0.4&0.3&0.6&0\\
+    0.3&-0.5&0.1&0\\
+    0.1&0.2&-0.7&0
+\end{pmatrix}
+\eqto{10II, 10III, 10IV}
+\begin{pmatrix}
+    1&1&1&120\\
+    -4&3&6&0\\
+    3&-5&1&0\\
+    1&2&-7&0
+\end{pmatrix}
+\eqto{II+4I, III-3I, IV-I}
+\begin{pmatrix}
+    1&1&1&120\\
+    0&7&10&480\\
+    0&-8&-2&-360\\
+    0&1&-8&-120
+\end{pmatrix} \\ \\ \\
+\eqto{III+II}
+\begin{pmatrix}
+    1&1&1&120\\
+    0&7&10&480\\
+    0&-1&8&120\\
+    0&1&-8&-120
+\end{pmatrix}
+\eqto{IV+III}
+\begin{pmatrix}
+    1&1&1&120\\
+    0&7&10&480\\
+    0&-1&8&120\\
+    0&0&0&0
+\end{pmatrix}
+\eqto{II+III}
+\begin{pmatrix}
+    1&1&1&120\\
+    0&6&18&600\\
+    0&-1&8&120\\
+    0&0&0&0
+\end{pmatrix}
+\eqto{\frac{1}{6}II}
+\begin{pmatrix}
+    1&1&1&120\\
+    0&1&3&100\\
+    0&-1&8&120\\
+    0&0&0&0
+\end{pmatrix}
+\\ \\ \\
+\eqto{III+II}
+\begin{pmatrix}
+    1&1&1&120\\
+    0&1&3&100\\
+    0&0&11&220\\
+    0&0&0&0
+\end{pmatrix}
+\eqto{\frac{1}{11}III}
+\begin{pmatrix}
+    1&1&1&120\\
+    0&1&3&100\\
+    0&0&1&20\\
+    0&0&0&0
+\end{pmatrix}
+\quad
+\eqto{I-II}
+\begin{pmatrix}
+    1&0&-2&20\\
+    0&1&3&100\\
+    0&0&1&20\\
+    0&0&0&0
+\end{pmatrix}
+\eqto{I+2III}
+\begin{pmatrix}
+    1&0&0&60\\
+    0&1&3&100\\
+    0&0&1&20\\
+    0&0&0&0
+\end{pmatrix} \\ \\ \\
+\eqto{II-3III}
+\begin{pmatrix}
+    1&0&0&60\\
+    0&1&0&40\\
+    0&0&1&20\\
+    0&0&0&0
+\end{pmatrix}
+\qquad
+\text{Dvs. at: } \qquad \uu{x = 60}, \qquad \uu{y = 40}, \qquad \uu{z=20}
+\)
+
+\newpage
+\section*{Seksjon 4.3}
+\subsection*{Oppgave 1}
+\
+\begin{enumerate}[A=]
+    \item $\begin{pmatrix}
+        0&1&0\\0&0&1\\0&0&0
+    \end{pmatrix}$
+     - Ja
+     \item $\begin{pmatrix}
+         1&1&0\\0&0&1\\0&0&0
+     \end{pmatrix}$
+     - Ja
+     \item $\begin{pmatrix}
+         1&0&0\\0&0&0\\0&1&0
+     \end{pmatrix}$
+     - Nei
+     \item $\begin{pmatrix}
+         1&2&-1&0&0\\0&0&0&1&7\\0&0&0&0&0
+     \end{pmatrix}$
+     - Ja
+     \item $\begin{pmatrix}
+         1&0&0\\0&1&0\\0&0&1\\0&0&0\\0&0&0
+     \end{pmatrix}$
+     - Ja
+     \item $\begin{pmatrix}
+         1&2&-1&0&0\\0&1&0&1&7\\0&0&1&0&0
+     \end{pmatrix}$
+     - Nei. Ikke 0 over pivot rad 2, ikke null over pivot rad 3
+\end{enumerate}
+
+\subsection*{Oppgave 2}
+\begin{enumerate}[A=]
+    \item $\begin{pmatrix}
+        1&2\\3&5
+    \end{pmatrix}
+    \eqto{II-3I}
+    \begin{pmatrix}
+        1&2\\0&-1
+    \end{pmatrix}
+    \eqto{I+2II}
+    \begin{pmatrix}
+        1&0\\0&-1
+    \end{pmatrix}
+    \eqto{-1II}
+    \uu{\begin{pmatrix}
+        1&0\\0&1
+    \end{pmatrix}}$
+
+    \item $\begin{pmatrix}
+        2&1&3&4\\1&1&0&3
+    \end{pmatrix}
+    \eqto{I-II}
+    \begin{pmatrix}
+        1&0&3&1\\1&1&0&3
+    \end{pmatrix}
+    \eqto{II-I}
+    \uu{\begin{pmatrix}
+        1&0&3&1\\0&1&0&2
+    \end{pmatrix}}$
+
+    \item $\begin{pmatrix}
+        1&1&1&2\\-1&2&-1&3\\2&2&1&1
+    \end{pmatrix}
+    \eqto{III+(2)II, II+I}
+    \begin{pmatrix}
+        1&1&1&2\\0&3&0&5\\0&6&-1&7
+    \end{pmatrix}
+    \eqto{III+(-2)II}
+    \begin{pmatrix}
+        1&1&1&2\\0&3&0&5\\0&0&-1&-3
+    \end{pmatrix}
+    \eqto{I+III}
+    \begin{pmatrix}
+        1&1&0&-1\\
+        0&3&0&5\\
+        0&0&-1&-3
+    \end{pmatrix} \\ \\ \\
+    \eqto{\frac{1}{3}II, -1III}
+    \begin{pmatrix}
+        1&1&0&-1\\
+        0&1&0&\frac{5}{3}\\
+        0&0&1&3
+    \end{pmatrix}    
+    \eqto{I-II}
+    \uu{\begin{pmatrix}
+        1&0&0&-\frac{8}{3}\\
+        0&1&0&\frac{5}{3}\\
+        0&0&1&3
+    \end{pmatrix}}$
+
+    \item $\begin{pmatrix}
+        1&2&3\\
+        2&4&6\\
+        -2&-4&5\\
+        -1&-2&8
+    \end{pmatrix}
+    \eqto{IV+I, III+II}
+    \begin{pmatrix}
+        1&2&3\\
+        2&4&6\\
+        0&0&11\\
+        0&0&11
+    \end{pmatrix}
+    \eqto{III-IV}
+    \begin{pmatrix}
+        1&2&3\\
+        2&4&6\\
+        0&0&11\\
+        0&0&0
+    \end{pmatrix} 
+    \eqto{II-2I}
+    \begin{pmatrix}
+        1&2&3\\
+        0&0&0\\
+        0&0&11\\
+        0&0&0
+    \end{pmatrix} 
+    \eqto{\frac{1}{11}II, II \leftrightarrow}
+    \begin{pmatrix}
+        1&2&3\\
+        0&0&11\\
+        0&0&0\\
+        0&0&0
+    \end{pmatrix}  \\ \\ \\
+    \eqto{\frac{1}{11}II}
+    \begin{pmatrix}
+        1&2&3\\
+        0&0&1\\
+        0&0&0\\
+        0&0&0
+    \end{pmatrix} 
+    \eqto{I-3II}
+    \uu{
+    \begin{pmatrix}
+        1&2&0\\
+        0&0&1\\
+        0&0&0\\
+        0&0&0
+    \end{pmatrix}}
+    $
+\end{enumerate}
+\newpage
+
+\subsection*{Oppgave 6}
+\(A = 
+\begin{cases}
+    2x-y+z+3u=-4 \\
+    -x+2y+4z+3u = 2\\
+    -2x+y+3z-4u=-1
+\end{cases}\)
+\\ \\ \\ 
+\(
+A' = 
+\begin{pmatrix}
+    2&-1&1&3&-4 \\
+    -1&2&4&3&2 \\
+    -2&1&3&-4&-1
+\end{pmatrix}
+\eqto{III+I}
+\begin{pmatrix}
+    2&-1&1&3&-4 \\
+    -1&2&4&3&2 \\
+    0&0&4&-1&-5
+\end{pmatrix}
+\eqto{(-1)II, I\leftrightarrow II}
+\begin{pmatrix}
+    1&-2&-4&-3&-2 \\
+    2&-1&1&3&-4 \\
+    0&0&4&-1&-5
+\end{pmatrix}
+\\ \\ \\
+\eqto{II+(-2)I}
+\begin{pmatrix}
+    1&-2&-4&-3&-2 \\
+    0&3&9&9&0 \\
+    0&0&4&-1&-5
+\end{pmatrix}
+\eqto{\frac{1}{3}II}
+\begin{pmatrix}
+    1&-2&-4&-3&-2 \\
+    0&1&3&3&0 \\
+    0&0&4&-1&-5
+\end{pmatrix}
+\eqto{I+(2)II}
+\begin{pmatrix}
+    1&0&2&3&-2 \\
+    0&1&3&3&0 \\
+    0&0&4&-1&-5
+\end{pmatrix}
+\\ \\ \\
+\eqto{\frac{1}{4}III}
+\begin{pmatrix}
+    1&0&2&3&-2 \\
+    0&1&3&3&0 \\
+    0&0&1&-\frac{1}{4}&-\frac{5}{4}
+\end{pmatrix}
+\eqto{I+(-2)III}
+\begin{pmatrix}
+    1&0&0&\frac{7}{2}&\frac{1}{2} \\
+    0&1&3&3&0 \\
+    0&0&1&-\frac{1}{4}&-\frac{5}{4}
+\end{pmatrix}
+\eqto{II+(-3)III}
+\begin{pmatrix}
+    1&0&0&\frac{7}{2}&\frac{1}{2} \\
+    0&1&0&\frac{15}{4}&\frac{15}{4} \\
+    0&0&1&-\frac{1}{4}&-\frac{5}{4}
+\end{pmatrix}
+\\ \\ \\
+A = 
+\begin{cases}
+    x + u\frac{7}{2} = \frac{1}{2} \ \ \eq x = \frac{1}{2} - \frac{7}{2}u\\
+    y + u\frac{15}{4} = \frac{15}{4} \eq y = \frac{15}{4}-\frac{15}{4}u\\
+    z -u\frac{1}{4} = -\frac{5}{4} \eq z = -\frac{5}{4} + \frac{u}{4}
+\end{cases}
+\qquad
+\text{Dvs. at: } \qquad \uu{x = \frac{1}{2}-\frac{7}{2}u}, \qquad \uu{y = \frac{15}{4}-\frac{15}{4}u}, \qquad \uu{z=-\frac{5}{4}+\frac{u}{4}}
+\)
 
 
 \end{document}
