@@ -15,6 +15,23 @@
 \setlength{\parindent}{0pt}
 \linespread{1}
 
+% vertical vector = \vect{...}
+\newcommand{\vect}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+% double underline is \uu{...}
+\newcommand{\uu}[1]{\underline{\underline{#1}}}
+% double bold underline is \uub{...}
+\newcommand{\uub}[1]{\underline{\underline{\textbf{#1}}}}
+% align counter reset
+\AtBeginEnvironment{align}{\setcounter{equation}{0}}
+% arrows
+\newcommand{\lra}{\quad\Longrightarrow\quad}
+% equivalent = \eq 
+\newcommand{\eq}{\quad\Longleftrightarrow\quad}
+% 3x space
+\newcommand{\trip}{\ \ \ }
+% relational equal
+\newcommand{\eqto}[1]{\overset{#1}{\sim}}
+
 
 \begin{document}
 \maketitle
@@ -75,5 +92,334 @@ Egenskapen av en lineæravbildning er at:
 \end{pmatrix} \quad=\quad \underline{\underline{\begin{pmatrix}
     -6 \\ -3
 \end{pmatrix} \ = \ T(3a-2b)}}\)
+
+
+\newpage
+\section*{Seksjon 4.1}
+
+\subsection*{Oppgave 1}
+Løsninger til ligningsystemet:
+\begin{align}
+    x + 2y - z = 3 \\
+    2x + 3y - 3z = -1 \\
+    -x + 2y + 3z = 1 
+\end{align}
+
+(1), (2), og (3) betegner hver linje.
+
+Trinn 1 (isoler x): \\ \\
+$(2) = (2) + (3)\cdot2 \lra [2x+3y-3z=-1]\ +\ [-2x+4y+6z=2] \lra [7y+3z=1]$ \\ 
+$(3) = (3) + (1) \quad\, \lra [-x+2y+3z=1]\trip + \ [x+2y-z=3] \quad\ \ \lra [4z+2z=4]$
+
+
+
+
+\setcounter{equation}{0}
+\begin{align}
+    x + 2y - z = 3 \\
+    7y + 3z = 1 \\
+    4y + 2z = 4
+\end{align}
+
+Trinn 2 (isoler y): \\ \\
+$(3) = 7\cdot(3)\ - 4\cdot(2) \lra [28y+14z=28]\ -\ [28y+12z=4] \lra [2z=24]$
+
+\setcounter{equation}{0}
+\begin{align}
+    x + 2y -z = 3 \\
+    7y + 3z = 1 \\
+    2z = 24
+\end{align}
+
+Løser: \\\\
+\begin{align*}
+    2z = 24 \eq z = 12 \\
+    7y + 3\cdot12 = 1 \eq 7y = -35 \eq y = -5 \\
+    x + 2\cdot-5 -(12) = 3 \eq x-10+12 = 3 \eq x = 25
+\end{align*}
+
+\[\uu{z = 12}, \qquad \uu{y = -5}, \qquad \uu{x = 25}\]
+
+
+
+\section*{Seksjon 4.2}
+
+\subsection*{Opppgave 3}
+
+\(A = \begin{cases}
+    x-y+2z=1\\2x+y+z=1\\-2x-y+z=0
+\end{cases}\)
+\\ \\ \\
+\(A' = \begin{pmatrix}
+    1&-1&2&1\\2&1&1&1\\-2&-1&1&0
+\end{pmatrix}
+\eqto{III+II}
+\begin{pmatrix}
+    1&-1&2&1\\2&1&1&1\\0&0&2&1
+\end{pmatrix}
+\eqto{II+(-2)I}
+\begin{pmatrix}
+    1&-1&2&1\\0&3&-3&-1\\0&0&2&1
+\end{pmatrix}
+\eqto{\frac{1}{3}II\\ \frac{1}{2}III}
+\begin{pmatrix}
+    1&-1&2&1\\0&1&-1&-\frac{1}{3}\\0&0&1&\frac{1}{2}
+\end{pmatrix}
+\) \\ \\
+
+dvs.
+\(\begin{cases}
+    z = \frac{1}{2} \\
+    y-z=-\frac{1}{3} \ \quad \eq y -\frac{1}{2}=-\frac{1}{3} \ \, \quad \eq y = \frac{1}{2}-\frac{1}{3} \ \ \quad \eq y = \frac{1}{6} \\
+    x-y+2z=1 \eq x-\frac{1}{6}+2\frac{1}{2}=1 \eq x+1-1 = \frac{1}{6} \, \eq x = \frac{1}{6}
+\end{cases}\)
+\\ \\ \\
+\[\uu{x = \frac{1}{6}}, \qquad \uu{y = \frac{1}{6}}, \qquad \uu{z = \frac{1}{2}}\]
+\\ \\ \\
+
+\subsection*{Opppgave 4}
+\(A = \begin{cases}
+    3x-4y+z=2\\x-2y=1\\-2x+2y-z=-1
+\end{cases}\)
+\\ \\ \\
+\(A' = \begin{pmatrix}
+    3&-4&1&2\\1&-2&0&1\\-2&2&-1&-1
+\end{pmatrix}
+\eqto{I\leftrightarrow II}
+\begin{pmatrix}
+    1&-2&0&1\\3&-4&1&2\\-2&2&-1&-1
+\end{pmatrix}
+\eqto{III+(2)I}
+\begin{pmatrix}
+    1&-2&0&1\\3&-4&1&2\\0&-2&-1&1
+\end{pmatrix}
+\eqto{II+(-3)I}
+\begin{pmatrix}
+    1&-2&0&1\\0&2&1&-1\\0&-2&-1&1
+\end{pmatrix} \\ \\ \\
+\eqto{III+II}
+\begin{pmatrix}
+    1&-2&0&1\\0&2&1&-1\\0&0&0&0
+\end{pmatrix}
+\eqto{\frac{1}{2}II}
+\begin{pmatrix}
+    1&-2&0&1\\0&1&\frac{1}{2}&-\frac{1}{2}\\0&0&0&0
+\end{pmatrix}
+\)
+
+dvs.
+\(\begin{cases}
+    z \in \mathbb{R} \\
+    y + \frac{Z}{2} = -\frac{1}{2} \eq y = -\frac{1}{2} - \frac{z}{2} \\
+    x -2(-\frac{z}{2}-\frac{1}{2}) = 1 \eq x + \frac{2z}{2} + \frac{2}{2} = 1 \eq x + z + 1 = 1 \eq x = -z
+\end{cases}\)
+\\ \\ \\
+\[\uu{x = -z}, \qquad \uu{y = -\frac{z}{2}-\frac{1}{2}}, \qquad \uu{z \in \mathbb{R}} \text{ (z kan velges fritt)}\]
+
+\newpage
+
+\subsection*{Oppgave 10}
+
+\(A =
+\begin{cases}
+    a+b+c=120 \\
+    0.6a+0.3b+0.6c=a \\
+    0.3a+0.5b+0.1c=b \\
+    0.1a+0.2b+0.3c=c 
+\end{cases}
+=
+\begin{cases}
+    a+b+c=120 \\
+    -0.4a+0.3b+0.6c=0 \\
+    0.3a-0.5b+0.1c=0 \\
+    0.1a+0.2b-0.7c=0 
+\end{cases}
+\\ \\ \\ \\
+A'= \begin{pmatrix}
+    1&1&1&120\\
+    -0.4&0.3&0.6&0\\
+    0.3&-0.5&0.1&0\\
+    0.1&0.2&-0.7&0
+\end{pmatrix}
+\eqto{10II, 10III, 10IV}
+\begin{pmatrix}
+    1&1&1&120\\
+    -4&3&6&0\\
+    3&-5&1&0\\
+    1&2&-7&0
+\end{pmatrix}
+\eqto{II+4I, III-3I, IV-I}
+\begin{pmatrix}
+    1&1&1&120\\
+    0&7&10&480\\
+    0&-8&-2&-360\\
+    0&1&-8&-120
+\end{pmatrix} \\ \\ \\
+\eqto{III+II}
+\begin{pmatrix}
+    1&1&1&120\\
+    0&7&10&480\\
+    0&-1&8&120\\
+    0&1&-8&-120
+\end{pmatrix}
+\eqto{IV+III}
+\begin{pmatrix}
+    1&1&1&120\\
+    0&7&10&480\\
+    0&-1&8&120\\
+    0&0&0&0
+\end{pmatrix}
+\eqto{II+III}
+\begin{pmatrix}
+    1&1&1&120\\
+    0&6&18&600\\
+    0&-1&8&120\\
+    0&0&0&0
+\end{pmatrix}
+\eqto{\frac{1}{6}II}
+\begin{pmatrix}
+    1&1&1&120\\
+    0&1&3&100\\
+    0&-1&8&120\\
+    0&0&0&0
+\end{pmatrix}
+\\ \\ \\
+\eqto{III+II}
+\begin{pmatrix}
+    1&1&1&120\\
+    0&1&3&100\\
+    0&0&11&220\\
+    0&0&0&0
+\end{pmatrix}
+\eqto{\frac{1}{11}III}
+\begin{pmatrix}
+    1&1&1&120\\
+    0&1&3&100\\
+    0&0&1&20\\
+    0&0&0&0
+\end{pmatrix}
+\quad
+\eqto{I-II}
+\begin{pmatrix}
+    1&0&-2&20\\
+    0&1&3&100\\
+    0&0&1&20\\
+    0&0&0&0
+\end{pmatrix}
+\eqto{I+2III}
+\begin{pmatrix}
+    1&0&0&60\\
+    0&1&3&100\\
+    0&0&1&20\\
+    0&0&0&0
+\end{pmatrix} \\ \\ \\
+\eqto{II-3III}
+\begin{pmatrix}
+    1&0&0&60\\
+    0&1&0&40\\
+    0&0&1&20\\
+    0&0&0&0
+\end{pmatrix}
+\qquad
+\text{Dvs. at: } \qquad \uu{x = 60}, \qquad \uu{y = 40}, \qquad \uu{z=20}
+\)
+
+\newpage
+\section*{Seksjon 4.3}
+\subsection*{Oppgave 6}
+\(A = 
+\begin{cases}
+    2x-y+z+3u=-4 \\
+    -x+2y+4z+3u = 2\\
+    -2x+y+3z-4u=-1
+\end{cases}\)
+\\ \\ \\ 
+\(
+A' = 
+\begin{pmatrix}
+    2&-1&1&3&-4 \\
+    -1&2&4&3&2 \\
+    -2&1&3&-4&-1
+\end{pmatrix}
+\eqto{III+I}
+\begin{pmatrix}
+    2&-1&1&3&-4 \\
+    -1&2&4&3&2 \\
+    0&0&4&-1&-5
+\end{pmatrix}
+\eqto{(-1)II, I\leftrightarrow II}
+\begin{pmatrix}
+    1&-2&-4&-3&-2 \\
+    2&-1&1&3&-4 \\
+    0&0&4&-1&-5
+\end{pmatrix}
+\\ \\ \\
+\eqto{II+(-2)I}
+\begin{pmatrix}
+    1&-2&-4&-3&-2 \\
+    0&3&9&9&0 \\
+    0&0&4&-1&-5
+\end{pmatrix}
+\eqto{\frac{1}{3}II}
+\begin{pmatrix}
+    1&-2&-4&-3&-2 \\
+    0&1&3&3&0 \\
+    0&0&4&-1&-5
+\end{pmatrix}
+\eqto{I+(2)II}
+\begin{pmatrix}
+    1&0&2&3&-2 \\
+    0&1&3&3&0 \\
+    0&0&4&-1&-5
+\end{pmatrix}
+\\ \\ \\
+\eqto{\frac{1}{4}III}
+\begin{pmatrix}
+    1&0&2&3&-2 \\
+    0&1&3&3&0 \\
+    0&0&1&-\frac{1}{4}&-\frac{5}{4}
+\end{pmatrix}
+\eqto{I+(-2)III}
+\begin{pmatrix}
+    1&0&0&\frac{7}{2}&\frac{1}{2} \\
+    0&1&3&3&0 \\
+    0&0&1&-\frac{1}{4}&-\frac{5}{4}
+\end{pmatrix}
+\eqto{II+(-3)III}
+\begin{pmatrix}
+    1&0&0&\frac{7}{2}&\frac{1}{2} \\
+    0&1&0&\frac{15}{4}&\frac{15}{4} \\
+    0&0&1&-\frac{1}{4}&-\frac{5}{4}
+\end{pmatrix}
+\\ \\ \\
+A = 
+\begin{cases}
+    x + u\frac{7}{2} = \frac{1}{2} \ \ \eq x = \frac{1}{2} - \frac{7}{2}u\\
+    y + u\frac{15}{4} = \frac{15}{4} \eq y = \frac{15}{4}-\frac{15}{4}u\\
+    z -u\frac{1}{4} = -\frac{5}{4} \eq z = -\frac{5}{4} + \frac{u}{4}
+\end{cases}
+\qquad
+\text{Dvs. at: } \qquad \uu{x = \frac{1}{2}-\frac{7}{2}u}, \qquad \uu{y = \frac{15}{4}-\frac{15}{4}u}, \qquad \uu{z=-\frac{5}{4}+\frac{u}{4}}
+\)
+\\ \\ \\
+\[\text{ Løsning med python:} \]
+\begin{figure}[H]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.8\linewidth]{oppg3.png}
+  \caption{Oppgave 1 kode}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.3\linewidth]{oppg3svar.png}
+  \caption{Oppgave 1 output}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{Seksjon 1.5 oppgave 1}
+\label{fig:test}
+\end{figure}
+
 
 \end{document}
