@@ -20,14 +20,30 @@
 % align counter reset
 \AtBeginEnvironment{align}{\setcounter{equation}{0}}
 % arrows
-\newcommand{\lra}{\quad\Longrightarrow\quad}
+\newcommand{\lra}{\leftrightarrow}
 % equivalent = \eq 
 \newcommand{\eq}{\quad\Longleftrightarrow\quad}
+\newcommand{\req}{\quad\Longrightarrow\quad}
 % 3x space
 \newcommand{\trip}{\ \ \ }
 % relational equal
 \newcommand{\eqto}[1]{\overset{#1}{\sim}}
 
+\newcommand{\eqqto}[1]{\overset{\substack{#1}}{\sim}}
+
+
+\newcommand{\lrule}[1]{%
+    \vspace{#1pt} % Space above the line
+    \hrule % Draw the horizontal line
+    \vspace{#1pt} % Space below the line
+}
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
 
 \setlength{\parskip}{1em}
 \setlength{\parindent}{0pt}
@@ -164,6 +180,7 @@ Løser: \\\\
 \subsection*{Opppgave 2}
 
 \begin{enumerate}[A=]
+\lrule{10}
     \item \( 
     \begin{pmatrix}
         1&2&1\\-1&-3&2\\2&1&2
@@ -187,6 +204,8 @@ Løser: \\\\
         0 & 0 & 1
     \end{pmatrix}}
     \)
+    
+\lrule{10}
 
     \item \(
     \begin{pmatrix}
@@ -207,6 +226,8 @@ Løser: \\\\
         1 & 1 & 2 \\ 0 & 1 & 2 \\ 0 & 0 & 1
     \end{pmatrix}}
     \)
+    
+\lrule{10}
 
     \item \(
     \begin{pmatrix}
@@ -234,6 +255,8 @@ Løser: \\\\
     \end{pmatrix}}
     \)
 
+\lrule{10}
+
     \item \(
     \begin{pmatrix}
         1&2&1&1\\-1&3&-1&2\\1&12&1&7
@@ -255,7 +278,8 @@ Løser: \\\\
         1&2&1&1\\0&1&0&\frac{3}{5}\\0&0&0&0
     \end{pmatrix}}
     \)
-    
+\lrule{10}
+
 \end{enumerate}
 
 
@@ -350,7 +374,7 @@ dvs.
     0.3a-0.5b+0.1c=0 \\
     0.1a+0.2b-0.7c=0 
 \end{cases}
-\\ \\ \\
+\\\\\\\\
 A'= \begin{pmatrix}
     1&1&1&120\\
     -0.4&0.3&0.6&0\\
@@ -370,7 +394,8 @@ A'= \begin{pmatrix}
     0&7&10&480\\
     0&-8&-2&-360\\
     0&1&-8&-120
-\end{pmatrix} \\ \\ \\
+\end{pmatrix} 
+\\\\\\\\
 \eqto{III+II}
 \begin{pmatrix}
     1&1&1&120\\
@@ -399,7 +424,7 @@ A'= \begin{pmatrix}
     0&-1&8&120\\
     0&0&0&0
 \end{pmatrix}
-\\ \\ \\
+\\ \\ \\\\
 \eqto{III+II}
 \begin{pmatrix}
     1&1&1&120\\
@@ -428,7 +453,8 @@ A'= \begin{pmatrix}
     0&1&3&100\\
     0&0&1&20\\
     0&0&0&0
-\end{pmatrix} \\ \\ \\
+\end{pmatrix} 
+\\\\ \\ \\
 \eqto{II-3III}
 \begin{pmatrix}
     1&0&0&60\\
@@ -443,36 +469,54 @@ A'= \begin{pmatrix}
 \newpage
 \section*{Seksjon 4.3}
 \subsection*{Oppgave 1}
-\
 \begin{enumerate}[A=]
+\lrule{15}
     \item $\begin{pmatrix}
         0&1&0\\0&0&1\\0&0&0
     \end{pmatrix}$
      - Ja
+
+\lrule{15}
+
      \item $\begin{pmatrix}
          1&1&0\\0&0&1\\0&0&0
      \end{pmatrix}$
      - Ja
+
+\lrule{15}
+
      \item $\begin{pmatrix}
          1&0&0\\0&0&0\\0&1&0
      \end{pmatrix}$
      - Nei
+
+\lrule{15}
+
      \item $\begin{pmatrix}
          1&2&-1&0&0\\0&0&0&1&7\\0&0&0&0&0
      \end{pmatrix}$
      - Ja
+
+\lrule{15}
+
      \item $\begin{pmatrix}
          1&0&0\\0&1&0\\0&0&1\\0&0&0\\0&0&0
      \end{pmatrix}$
      - Ja
+
+\lrule{15}
+
      \item $\begin{pmatrix}
          1&2&-1&0&0\\0&1&0&1&7\\0&0&1&0&0
      \end{pmatrix}$
      - Nei. Ikke 0 over pivot rad 2, ikke null over pivot rad 3
+\lrule{15}
 \end{enumerate}
 
+\newpage
 \subsection*{Oppgave 2}
-\begin{enumerate}[A=]
+\begin{enumerate}[A =]
+\lrule{20}
     \item $\begin{pmatrix}
         1&2\\3&5
     \end{pmatrix}
@@ -489,6 +533,8 @@ A'= \begin{pmatrix}
         1&0\\0&1
     \end{pmatrix}}$
 
+\lrule{20}
+
     \item $\begin{pmatrix}
         2&1&3&4\\1&1&0&3
     \end{pmatrix}
@@ -500,6 +546,8 @@ A'= \begin{pmatrix}
     \uu{\begin{pmatrix}
         1&0&3&1\\0&1&0&2
     \end{pmatrix}}$
+
+\lrule{20}
 
     \item $\begin{pmatrix}
         1&1&1&2\\-1&2&-1&3\\2&2&1&1
@@ -530,6 +578,8 @@ A'= \begin{pmatrix}
         0&1&0&\frac{5}{3}\\
         0&0&1&3
     \end{pmatrix}}$
+
+\lrule{20}
 
     \item $\begin{pmatrix}
         1&2&3\\
@@ -579,8 +629,10 @@ A'= \begin{pmatrix}
         0&0&1\\
         0&0&0\\
         0&0&0
-    \end{pmatrix}}
-    $
+    \end{pmatrix}}$
+    
+\lrule{20}
+    
 \end{enumerate}
 \newpage
 
@@ -660,6 +712,555 @@ A =
 \text{Dvs. at: } \qquad \uu{x = \frac{1}{2}-\frac{7}{2}u}, \qquad \uu{y = \frac{15}{4}-\frac{15}{4}u}, \qquad \uu{z=-\frac{5}{4}+\frac{u}{4}}
 \)
 
+\newpage
+\section*{Seksjon 4.4}
+
+
+\subsection*{Oppgave 1}
+\begin{enumerate}[a)]
+\lrule{15}
+    \item $A=\begin{pmatrix}
+        2&1\\1&1
+    \end{pmatrix},\quad b = \begin{pmatrix}
+        2\\-1
+    \end{pmatrix} 
+    \\ \\ \\
+    B=\begin{pmatrix}
+        2&1&2\\1&1&-1
+    \end{pmatrix}
+    \eqto{I\leftrightarrow II}
+    \begin{pmatrix}
+        1&1&-1\\
+        2&1&2
+    \end{pmatrix}
+    \eqto{II+(-2)I}
+    \begin{pmatrix}
+        1&1&-1\\
+        0&-1&4
+    \end{pmatrix}
+    \eqto{(-1)II}
+        \begin{pmatrix}
+        1&1&-1\\
+        0&1&-4
+    \end{pmatrix}
+    \eqto{I+(-1)II}
+    \begin{pmatrix}
+        1&0&3\\
+        0&1&-4
+    \end{pmatrix}
+    \\ \\ \\
+    \begin{cases}
+       x_1 = 3 \\
+       x_2 = -4
+    \end{cases}
+    \qquad
+    \text{dvs. at } \uu{x = 
+    \begin{pmatrix}
+        3\\-4
+    \end{pmatrix}}$
+    
+\lrule{15}
+
+    \item $A=\begin{pmatrix}
+        1&1&1\\-1&2&-1\\2&-2&1
+    \end{pmatrix},\quad b = \begin{pmatrix}
+        2\\2\\0
+    \end{pmatrix} 
+    \\ \\ \\ 
+    B = \begin{pmatrix}
+        1&1&1&2\\
+        -1&2&-1&2\\
+        2&-2&1&0
+    \end{pmatrix}
+    \eqto{II+I}
+    \begin{pmatrix}
+        1&1&1&2\\
+        0&3&0&4\\
+        2&-2&1&0
+    \end{pmatrix}
+    \eqto{II+(-2)I}
+        \begin{pmatrix}
+        1&1&1&2\\
+        0&3&0&4\\
+        0&-4&-1&-4
+    \end{pmatrix}
+    \eqto{III+(\frac{4}{3})II}
+    \begin{pmatrix}
+        1&1&1&2\\
+        0&3&0&4\\
+        0&0&-1&\frac{4}{3}
+    \end{pmatrix}
+    \\ \\ \\
+    \eqto{I+III}
+      \begin{pmatrix}
+        1&1&0&\frac{10}{3}\\
+        0&3&0&4\\
+        0&0&-1&\frac{4}{3}
+    \end{pmatrix}
+    \eqto{\frac{1}{3}II}
+    \begin{pmatrix}
+        1&1&0&\frac{10}{3}\\
+        0&1&0&\frac{4}{3}\\
+        0&0&-1&\frac{4}{3}
+    \end{pmatrix}
+    \eqto{I+(-1)II}
+    \begin{pmatrix}
+        1&0&0&2\\
+        0&1&0&\frac{4}{3}\\
+        0&0&-1&\frac{4}{3}
+    \end{pmatrix}
+    \eqto{(-1)III}
+        \begin{pmatrix}
+        1&0&0&2\\
+        0&1&0&\frac{4}{3}\\
+        0&0&1&-\frac{4}{3}
+    \end{pmatrix}
+    \\ \\ \\ 
+    \begin{cases}
+        x_1 = 2\\
+        x_2 = \frac{4}{3}\\
+        x_3 = -\frac{4}{3}
+    \end{cases}
+    \qquad
+    \text{dvs. at } \uu{x = 
+    \begin{pmatrix}
+        2\\ \frac{4}{3}\\-\frac{4}{3}
+    \end{pmatrix}}$
+    
+\lrule{15}
+
+\item \(A=\begin{pmatrix}
+    2&1&-1&2\\1&1&-1&2\\-1&1&2&1
+\end{pmatrix}, \quad b=\begin{pmatrix}
+    3\\-1\\-2
+\end{pmatrix}
+\\\\\\\\
+B = 
+\begin{pmatrix}
+    2&1&-1&2&3\\
+    1&1&-1&2&-1\\
+    -1&1&2&1&-2
+\end{pmatrix}
+\)
+\end{enumerate}
+
+
+
+
+\newpage
+\subsection*{Oppgave 2}
+
+\(\mathbf{A = \begin{pmatrix}
+    3&1\\-1&2
+\end{pmatrix}, \quad b_1 = \begin{pmatrix}
+    1\\-2
+\end{pmatrix}, \quad b_2 = \begin{pmatrix}
+    -1\\4
+\end{pmatrix},
+\qquad \qquad Ax_1 = b_1 \quad Ax_2 = b_2}
+\\\\\\\\
+(A,b_1, b_2) = 
+\begin{pmatrix}[cc|c|c]
+    3&1&1&-1\\
+    -1&2&-2&4
+\end{pmatrix} 
+\eqqto{I+2II}
+\begin{pmatrix}[cc|c|c]
+    1&5&-3&7\\
+    -1&2&-2&4
+\end{pmatrix} 
+\eqqto{II+I}
+\begin{pmatrix}[cc|c|c]
+    1&5&-3&7\\
+    0&7&-5&11
+\end{pmatrix} 
+\eqqto{\frac{1}{7}II}
+\begin{pmatrix}[cc|c|c]
+    1&5&-3&7\\
+    0&1&-\frac{5}{7}&\frac{11}{7}
+\end{pmatrix} 
+\\\\\\
+\eqqto{I-5II}
+\begin{pmatrix}[cc|c|c]
+    1&0&\frac{4}{7}&-\frac{6}{7}\\
+    0&1&-\frac{5}{7}&\frac{11}{7}
+\end{pmatrix} 
+\req \uu{x_1 = \vect{\frac{4}{7} \\ -\frac{5}{7}}, \quad x_2 = \vect{-\frac{6}{7} \\ \frac{11}{7}}}
+\)
+
+\subsection*{Oppgave 3}
+\(\mathbf{A = \begin{pmatrix}
+    -2&1&3 \\
+    1&2&-1\\
+    0&2&1
+\end{pmatrix}, \quad b_1 = \begin{pmatrix}
+    1\\0\\-1
+\end{pmatrix}, \quad b_2 = \begin{pmatrix}
+    2\\2\\1
+\end{pmatrix}, \qquad Ax_1 = b_1 \quad Ax_2 = b_2}
+\\\\\\\\\\
+(A, b_1, b_2) = 
+\begin{pmatrix}[ccc|c|c]
+    -2&1&3&1&2\\
+    1&2&-1&0&2\\
+    0&2&1&-1&1
+\end{pmatrix}
+\eqqto{I \leftrightarrow II}
+\begin{pmatrix}[ccc|c|c]
+    1&2&-1&0&2\\
+    -2&1&3&1&2\\
+    0&2&1&-1&1
+\end{pmatrix}
+\eqqto{II+2I}
+\begin{pmatrix}[ccc|c|c]
+    1&2&-1&0&2\\
+    0&5&1&1&6\\
+    0&2&1&-1&1
+\end{pmatrix}
+\\\\\\
+\eqqto{II-2III}
+\begin{pmatrix}[ccc|c|c]
+    1&2&-1&0&2\\
+    0&1&-1&3&4\\
+    0&2&1&-1&1
+\end{pmatrix}
+\eqqto{III-2II}
+\begin{pmatrix}[ccc|c|c]
+    1&2&-1&0&2\\
+    0&1&-1&3&4\\
+    0&0&3&-7&-7
+\end{pmatrix}
+\eqqto{I-2II}
+\begin{pmatrix}[ccc|c|c]
+    1&0&1&-6&-6\\
+    0&1&-1&3&4\\
+    0&0&3&-7&-7
+\end{pmatrix}
+\\\\\\
+\eqqto{\frac{1}{3}III}
+\begin{pmatrix}[ccc|c|c]
+    1&0&1&-6&-6\\
+    0&1&-1&3&4\\
+    0&0&1&-\frac{7}{3}&-\frac{7}{3}
+\end{pmatrix}
+\eqqto{II+III\\\\I-III}
+\begin{pmatrix}[ccc|c|c]
+    1&0&0&-\frac{11}{3}&-\frac{11}{3}\\
+    0&1&0&\frac{2}{3}&\frac{5}{3}\\
+    0&0&1&-\frac{7}{3}&-\frac{7}{3}
+\end{pmatrix}
+\req \uu{x_1 = \frac{1}{3}\vect{-11\\2\\-7}, \quad x_2 = \frac{1}{3}\vect{-11\\5\\-7}}
+\)
+
+\newpage
+\subsection*{Oppgave 4}
+\lrule{10}
+a)
+\(A = 
+\begin{pmatrix}
+    0&1&2&0\\
+    1&0&-1&1\\
+    6&0&-6&7\\
+    2&1&0&0
+\end{pmatrix}
+\eqto{I \leftrightarrow II}
+\begin{pmatrix}
+    1&0&-1&1\\
+    0&1&2&0\\
+    6&0&-6&7\\
+    2&1&0&0
+\end{pmatrix}
+\eqto{IV -2I}
+\begin{pmatrix}
+    1&0&-1&1\\
+    0&1&2&0\\
+    6&0&-6&7\\
+    0&1&2&-2
+\end{pmatrix}
+\eqto{III-6I}
+\begin{pmatrix}
+    1&0&-1&1\\
+    0&1&2&0\\
+    0&0&0&1\\
+    0&1&2&-2
+\end{pmatrix}
+\\ \\ \\
+\eqto{IV-1II}
+\begin{pmatrix}
+    1&0&-1&1\\
+    0&1&2&0\\
+    0&0&0&1\\
+    0&0&0&-2
+\end{pmatrix}
+\eqto{IV+2III}
+\begin{pmatrix}
+    1&0&-1&1\\
+    0&1&2&0\\
+    0&0&0&1\\
+    0&0&0&0
+\end{pmatrix}
+\\ \\ \\ \)
+\lrule{5}
+b)
+\(b = 
+\begin{pmatrix}
+    0\\1\\h\\0
+\end{pmatrix}
+\qquad
+\text{Vi setter sammen A og b slik at } B = (A, b)
+\\ \\ \\
+B = 
+\begin{pmatrix}[cccc|c]
+    0&1&2&0&0\\
+    1&0&-1&1&1\\
+    6&0&-6&7&h\\
+    2&1&0&0&0
+\end{pmatrix}
+\eqqto{I \leftrightarrow II}
+\begin{pmatrix}[cccc|c]
+    1&0&-1&1&1\\
+    0&1& 2&0&0\\
+    6&0&-6&7&h\\
+    2&1& 0&0&0
+\end{pmatrix}
+\eqqto{IV-2I}
+\begin{pmatrix}[cccc|c]
+    1&0&-1&1&1\\
+    0&1& 2&0&0\\
+    6&0&-6&7&h\\
+    0&1& 2&-2&-2
+\end{pmatrix}
+\\ \\ \\
+\eqqto{III-6I}
+\begin{pmatrix}[cccc|c]
+    1&0&-1&1&1\\
+    0&1& 2&0&0\\
+    0&0&0&1&h-6\\
+    0&1& 2&-2&-2
+\end{pmatrix}
+\eqqto{IV-1II}
+\begin{pmatrix}[cccc|c]
+    1&0&-1&1&1\\
+    0&1& 2&0&0\\
+    0&0&0&1&h-6\\
+    0&0& 0&-2&-2
+\end{pmatrix}
+\eqqto{IV+2III}
+\begin{pmatrix}[cccc|c]
+    1&0&-1&1&1\\
+    0&1&2&0&0\\
+    0&0&0&1&h-6\\
+    0&0&0&0&2h-14
+\end{pmatrix}
+\)
+\\ \\ \\
+Om $(2h-14)$ ikke blir 0, så blir søyle 4 pivot-søyle, som vil si at systemet har ingen løsninger. \\\\
+Derfor velger vi å sette inn $h = 7$, og får: \\\\
+$\begin{pmatrix}[cccc|c]
+    1&0&-1&1&1\\
+    0&1&2&0&0\\
+    0&0&0&1&1\\
+    0&0&0&0&0
+\end{pmatrix}
+\eqqto{I-III}
+\begin{pmatrix}[cccc|c]
+    1&0&-1&0&0\\
+    0&1&2&0&0\\
+    0&0&0&1&1\\
+    0&0&0&0&0
+\end{pmatrix}
+\quad \text{Dvs. at }
+\uu{\begin{cases}
+    x_1=x_3\\
+    x_2=-2x_3\\
+    0=0, \text{ dvs. $x_3$ er fri} \\
+    x_4=1
+\end{cases}}
+\text{ f.eks. }
+x = \begin{pmatrix}
+    1\\-2\\1\\1
+\end{pmatrix}$
+\lrule{10}
+
+\newpage
+\section*{Section 4.5}
+\subsection*{Oppgave 1}
+\begin{enumerate}[a)]
+    \item \(
+    (A, I_2) = 
+    \begin{pmatrix}
+        1&2&1&0 \\
+        3&-1&0&1
+    \end{pmatrix}
+    \eqqto{II-3I}
+    \begin{pmatrix}
+        1&2&1&0 \\
+        0&-7&-3&1
+    \end{pmatrix}
+    \eqqto{-\frac{1}{7}II}
+    \begin{pmatrix}
+        1&2&1&0 \\
+        0&1&\frac{3}{7}&-\frac{1}{7}
+    \end{pmatrix}
+    \eqqto{I-2II}
+    \begin{pmatrix}
+        1&0&\frac{1}{7}&\frac{2}{7} \\
+        0&1&\frac{3}{7}&-\frac{1}{7}
+    \end{pmatrix}
+    \\\\\\
+    \uu{A^{-1} = \frac{1}{7}\begin{pmatrix}
+        1&2\\3&-1
+    \end{pmatrix}}
+    \)
+
+    \lrule{20}
+    
+    \item \(
+    (B, I_2) = 
+    \begin{pmatrix}
+        2&-1&1&0\\
+        1&1&0&1
+    \end{pmatrix}
+    \eqqto{I \leftrightarrow II}
+    \begin{pmatrix}
+        1&1&0&1\\
+        2&-1&1&0
+    \end{pmatrix}
+    \eqqto{II-2I}
+    \begin{pmatrix}
+        1&1&0&1\\
+        0&-3&1&-2
+    \end{pmatrix}
+    \eqqto{-\frac{1}{3}II}
+    \begin{pmatrix}
+        1&1&0&1\\
+        0&1&-\frac{1}{3}&\frac{2}{3}
+    \end{pmatrix}
+    \\\\\\
+    \eqqto{I-II}
+    \begin{pmatrix}
+        1&0&\frac{1}{3}&\frac{1}{3}\\
+        0&1&-\frac{1}{3}&\frac{2}{3}
+    \end{pmatrix}
+    \qquad \uu{B^{-1} = \frac{1}{3}\vect{1&1\\-1&2}}
+    \\\\\\\)
+
+    \item \( (C, I_2) = 
+    \begin{pmatrix}
+        1&-2&1&0 \\
+        -3&6&0&1
+    \end{pmatrix}
+    \eqqto{II+3I}
+    \begin{pmatrix}
+        1&-2&1&0 \\
+        0&0&-3&1
+    \end{pmatrix}
+    \)
+    \qquad
+    \uu{C er ikke inverterbar, fordi rad 2 har ingen pivot.}
+\end{enumerate}
+
+\subsection*{Oppgave 2}
+\begin{enumerate}[a)]
+    \item \(
+    (A, I_3) = 
+    \begin{pmatrix}[ccc|ccc]
+        1&1&2&1&0&0\\
+        -1&1&1&0&1&0\\
+        2&3&3&0&0&1
+    \end{pmatrix}
+    \eqqto{III+2II}
+    \begin{pmatrix}[ccc|ccc]
+        1&1&2&1&0&0\\
+        -1&1&1&0&1&0\\
+        0&5&5&0&2&1
+    \end{pmatrix}
+    \eqqto{II+I}
+    \begin{pmatrix}[ccc|ccc]
+        1&1&2&1&0&0\\
+        0&2&3&1&1&0\\
+        0&5&5&0&2&1
+    \end{pmatrix}
+    \\\\\\
+    \eqqto{III-2II}
+    \begin{pmatrix}[ccc|ccc]
+        1&1&2&1&0&0\\
+        0&2&3&1&1&0\\
+        0&1&-1&-2&0&1
+    \end{pmatrix}
+    \eqqto{II-2III}
+    \begin{pmatrix}[ccc|ccc]
+        1&1&2&1&0&0\\
+        0&0&5&5&1&-2\\
+        0&1&-1&-2&0&1
+    \end{pmatrix}
+    \eqqto{II \lra III}
+    \begin{pmatrix}[ccc|ccc]
+        1&1&2&1&0&0\\
+        0&1&-1&-2&0&1\\
+        0&0&5&5&1&-2
+    \end{pmatrix}
+    \\\\\\
+    \eqqto{I-II}
+    \begin{pmatrix}[ccc|ccc]
+        1&0&3&3&0&-1\\
+        0&1&-1&-2&0&1\\
+        0&0&5&5&1&-2
+    \end{pmatrix}
+    \eqqto{\frac{1}{5}III}
+    \begin{pmatrix}[ccc|ccc]
+        1&0&3&3&0&-1\\
+        0&1&-1&-2&0&1\\
+        0&0&1&1&\frac{1}{5}&-\frac{2}{5}
+    \end{pmatrix}
+    \eqqto{II+III\\\\I-3III}
+    \begin{pmatrix}[ccc|ccc]
+        1&0&0&0&-\frac{3}{5}&\frac{1}{5}\\
+        0&1&0&-1&\frac{1}{5}&\frac{3}{5}\\
+        0&0&1&1&\frac{1}{5}&-\frac{2}{5}
+    \end{pmatrix}
+    \\\\\\
+    \uu{A^{-1} =
+    \begin{pmatrix}
+        0&-\frac{3}{5}&\frac{1}{5}\\
+        -1&\frac{1}{5}&\frac{3}{5}\\
+        1&\frac{1}{5}&-\frac{2}{5}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        0&-0.6&0.2\\
+        -1&0.2&0.6\\
+        1&0.2&-0.4
+    \end{pmatrix}}\)
+
+\lrule{20}
+
+    \item \(
+    (B, I_3) = 
+    \begin{pmatrix}[ccc|ccc]
+        1&-2&3&1&0&0\\
+        2&4&0&0&1&0\\
+        4&16&-6&0&0&1
+    \end{pmatrix}
+    \eqqto{III-2II\\\\II-2I}
+    \begin{pmatrix}[ccc|ccc]
+        1&-2&3&1&0&0\\
+        0&8&-6&-2&1&0\\
+        0&8&-6&0&-2&1
+    \end{pmatrix}
+    \eqqto{III-II}
+    \begin{pmatrix}[ccc|ccc]
+        1&-2&3&1&0&0\\
+        0&8&-6&-2&1&0\\
+        0&0&0&2&-3&1
+    \end{pmatrix}
+    \\\\\\
+    \)
+    \uu{B er ikke inverterbar, fordi rad 3 har ingen pivot.}
+\end{enumerate}
+
+\newpage
+\subsection*{Oppgave 3}
 
 \end{document}
 
