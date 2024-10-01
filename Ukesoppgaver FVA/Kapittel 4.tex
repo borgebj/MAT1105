@@ -1284,18 +1284,89 @@ x = \begin{pmatrix}
 \centering
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=.6\linewidth]{Ukesoppgaver FVA/4.5.4a_kode.PNG}
+  \includegraphics[width=.6\linewidth]{4.5.4a_kode.PNG}
   \caption{Oppgave 4a kode}
   \label{fig:sub1}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=1\linewidth]{Ukesoppgaver FVA/4.5.4a_out.PNG}
+  \includegraphics[width=.6\linewidth]{4.5.4a_out.PNG}
   \caption{Oppgave 4a output}
   \label{fig:sub2}
 \end{subfigure}
 \label{fig:test}
 \end{figure} 
 
+
+
+
+\newpage
+\subsection*{Python kommandoer}
+\begin{enumerate}
+    \item Biblioteker
+    \begin{enumerate}[]
+        \item \textbf{from numpy import *}
+        \item \textbf{from sympy import *}
+    \end{enumerate}
+    \vspace{1em}
+    
+    \item Matriser
+    \begin{enumerate}[]
+        \item $\textbf{numpy} \quad A = \texttt{matrix([[1,2,3], [4,5,6], [7,8,9]])}  \quad \text{ blir } \quad \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{pmatrix}$
+
+        \item $\textbf{sympy} \quad A = \texttt{Matrix([[1,2,3], [4,5,6], [7,8,9]])} \quad \text{ blir } \quad \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{pmatrix}$
+    \end{enumerate}
+    \vspace{1em}
+
+    
+    \item Operasjoner \\[1em]
+    \begin{equation*}
+    \begin{array}{l l}
+        \textbf{A+B} & \text{Regner ut A + B} \\[0.5em]
+        \textbf{A-B} & \text{Regner ut A - B} \\[0.5em]
+        \textbf{A*B} & \text{Matrisemultiplikasjon AB} \\[0.5em]
+        \textbf{3*A} & \text{Ganger matrise A med 3} \\[0.5em]
+        \textbf{A**7} & \text{A i 7. potens} \\[0.5em]
+        \textbf{A.T} & \text{Transponert av A} \\[0.5em]
+        \textbf{linalg.inv(A)} & \text{Invers av A} \\[0.5em]
+        \textbf{linalg.det(A)} & \text{Determinant til A} \\[0.5em]
+        \textbf{D,V = linalg.eig(A)} & \text{Egenverdi og egenvektor til A} \\[0.5em]
+    \end{array}
+    \end{equation*}
+
+
+    \item Annet \\[1em]
+    \begin{equation*}
+    \begin{array}{l l}
+        \textbf{Redusert trappeform} & \text{B = A.rref()} \\[0.5em]
+
+        \textbf{Løs Ax = b} & \text{linalg.solve(A, b)} \\[0.5em]
+
+        \textbf{concatenate((A,B), axis=1)} & \text{Skjøter sammen A og B. (A,b)} \\[0.5em]
+
+        \textbf{Identitetsmatrisen} & \text{eye(3,3) for 3x3}
+        
+    \end{array}
+    \end{equation*}
+    \vspace{1em}
+
+    \item Gauss-eliminasjon - eksempler\\[1em]
+    \(A = 
+    \vect{2&-3&1&7&4\\
+    0&1&-3&2&5\\
+    -4&2&1&-1&3}
+    \\\\\\
+   \mathbf{2\cdot R1} \qquad \text{C[0, :] = 2*C[0, :]}
+    \\\\\\
+    A = 
+    \vect{
+    4&-6&2&14&8\\
+    0&1&-3&2&5\\
+    -4&2&1&-1&3}
+    \\\\\\
+    \mathbf{R3 + R1} \qquad \text{C[2, :] = C[2, :] + C[0, :]}
+    \)
+    
+\end{enumerate}
 \end{document}
 
