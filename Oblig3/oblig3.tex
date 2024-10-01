@@ -13,7 +13,7 @@
 \usepackage{float}
 \setlength{\parskip}{2em}
 \setlength{\parindent}{0pt}
-\linespread{1}
+\linespread{1.2}
 
 % vertical vector = \vect{...}
 \newcommand{\vect}[1]{\begin{pmatrix} #1 \end{pmatrix}}
@@ -27,10 +27,23 @@
 \newcommand{\lra}{\quad\Longrightarrow\quad}
 % equivalent = \eq 
 \newcommand{\eq}{\quad\Longleftrightarrow\quad}
+\newcommand{\eqq}{\quad=\quad}
 % 3x space
 \newcommand{\trip}{\ \ \ }
 % relational equal
 \newcommand{\eqto}[1]{\overset{#1}{\sim}}
+\newcommand{\eqqto}[1]{\overset{\substack{#1}}{\sim}}
+\newcommand{\lrule}[1]{
+    \vspace{#1pt} % Space above the line
+    \hrule % Draw the horizontal line
+    \vspace{#1pt} % Space below the line
+}
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
 
 
 \begin{document}
@@ -46,9 +59,9 @@
 \end{pmatrix}\) \ og \ \(T(e_2) = \begin{pmatrix}
     0 \\ -2 \\ 4 \\ 7
 \end{pmatrix}\)
-\\ \\ \\ 
-Funksjonen tar inn en vektor i planet og gir ut en vektor i det 4-dimensjonelle rommet. \\ 
-Detvil si at $e_1$ og $e_2$ er første og andre søyle i matrisen A.\\ \\
+
+Funksjonen tar inn en vektor i planet og gir ut en vektor i det 4-dimensjonelle rommet. \\
+Det vil si at $e_1$ og $e_2$ er første og andre søyle i matrisen A.\\ \\
 Da er matrisen til T, \quad \(\underline{\underline{A = 
 \begin{pmatrix}
     -1 & 0 \\ 2 & -2 \\ -3 & 4 \\ 4 & 7
@@ -57,42 +70,26 @@ Da er matrisen til T, \quad \(\underline{\underline{A =
 \newpage
 
 \subsection*{Oppgave 3}
-\say{\(a, b \in \mathbb{R}^2, \quad T : \mathbb{R}^2 \rightarrow \mathbb{R}^2\) tilfredsstiller \(\quad 
+\(a, b \in \mathbb{R}^2, \quad T : \mathbb{R}^2 \rightarrow \mathbb{R}^2\) tilfredsstiller \(\quad 
 T(a) = \begin{pmatrix}
     -2 \\ 1
 \end{pmatrix}\) \ og \ 
 \(T(b) = \begin{pmatrix}
     0 \\ 3
-\end{pmatrix}\)}
+\end{pmatrix} \ \text{ Finn } T(3a-2b)\)
 
-Egenskapen av en lineæravbildning er at:
+Egenskapene til lineæravbildninger er:
 \begin{enumerate}
     \item \(T(a+b) = T(a) + T(b)\)
     \item \(T(\textbf{c}x) = \textbf{c}T(x)\), for $c \in \mathbb{R}$
 \end{enumerate}
 
-\(T(3a-2b) \text{ kan skrives som: } \\\\ T(3a + (-2b)) \quad=\quad T(3a) + T(-2b) \quad=\quad 3T(a) + (-2)T(b) \quad=\quad 3T(x) - 2T(b)\)
+For å finne $T(3a-2b)$ kan vi omforme den ved hjelp av disse reglene: \\
+\begin{align*}
+    T(3a-2b) \eqq T(3a) + T(-2b) \eqq 3T(a) + (-2)T(b) \eqq 3T(a) -2T(b) \\\\ \eqq 3\vect{-2\\1} - 2\vect{0\\3} \eqq \vect{-6\\3} - \vect{0\\6} \eqq \vect{-6\\-3} \eqq T(3a-2b) 
+\end{align*}
 
-\(3T(a) = 3\cdot\begin{pmatrix}
-    -2 \\ 1
-\end{pmatrix} = \begin{pmatrix}
-    -6 \\ 3
-\end{pmatrix}
-\quad \quad \quad
--2T(b) = -2\cdot\begin{pmatrix}
-    0 \\ 3
-\end{pmatrix} = \begin{pmatrix}
-    0 \\ -6
-\end{pmatrix}
-\quad \Leftrightarrow\\ \\ \\ \Leftrightarrow \quad
-3T(x)-2T(b) \quad=\quad \begin{pmatrix}
-    -6 \\ 3
-\end{pmatrix} + \begin{pmatrix}
-    0 \\ -6
-\end{pmatrix} \quad=\quad \underline{\underline{\begin{pmatrix}
-    -6 \\ -3
-\end{pmatrix} \ = \ T(3a-2b)}}\)
-
+Derfor er \uu{$T(3a-2b) = \vect{-6\\-3}$}
 
 \newpage
 \section*{Seksjon 4.1}
@@ -105,11 +102,11 @@ Løsninger til ligningsystemet:
     -x + 2y + 3z = 1 
 \end{align}
 
-(1), (2), og (3) betegner hver linje.
+(1), (2), og (3) betegner tilsvarende linjer i systemet.
 
 Trinn 1 (isoler x): \\ \\
-$(2) = (2) + (3)\cdot2 \lra [2x+3y-3z=-1]\ +\ [-2x+4y+6z=2] \lra [7y+3z=1]$ \\ 
-$(3) = (3) + (1) \quad\, \lra [-x+2y+3z=1]\trip + \ [x+2y-z=3] \quad\ \ \lra [4z+2z=4]$
+$(2) + 2(3) \lra [2x+3y-3z=-1]\ +\ [-2x+4y+6z=2] \lra [7y+3z=1]$ \\ 
+$(3) + (1) \quad\, \lra [-x+2y+3z=1]\trip + \ [x+2y-z=3] \quad\ \ \lra [4z+2z=4]$
 
 
 
@@ -122,7 +119,7 @@ $(3) = (3) + (1) \quad\, \lra [-x+2y+3z=1]\trip + \ [x+2y-z=3] \quad\ \ \lra [4z
 \end{align}
 
 Trinn 2 (isoler y): \\ \\
-$(3) = 7\cdot(3)\ - 4\cdot(2) \lra [28y+14z=28]\ -\ [28y+12z=4] \lra [2z=24]$
+$(3) = 7(3) - 4(2) \lra [28y+14z=28]\ -\ [28y+12z=4] \lra [2z=24]$
 
 \setcounter{equation}{0}
 \begin{align}
@@ -157,15 +154,15 @@ Løser: \\\\
 \begin{pmatrix}
     1&-1&2&1\\2&1&1&1\\0&0&2&1
 \end{pmatrix}
-\eqto{II+(-2)I}
+\eqqto{II+(-2)I}
 \begin{pmatrix}
     1&-1&2&1\\0&3&-3&-1\\0&0&2&1
 \end{pmatrix}
-\eqto{\frac{1}{3}II\\ \frac{1}{2}III}
+\eqqto{\frac{1}{3}II\\\\ \frac{1}{2}III}
 \begin{pmatrix}
     1&-1&2&1\\0&1&-1&-\frac{1}{3}\\0&0&1&\frac{1}{2}
 \end{pmatrix}
-\) \\ \\
+\) \\
 
 dvs.
 \(\begin{cases}
@@ -173,9 +170,8 @@ dvs.
     y-z=-\frac{1}{3} \ \quad \eq y -\frac{1}{2}=-\frac{1}{3} \ \, \quad \eq y = \frac{1}{2}-\frac{1}{3} \ \ \quad \eq y = \frac{1}{6} \\
     x-y+2z=1 \eq x-\frac{1}{6}+2\frac{1}{2}=1 \eq x+1-1 = \frac{1}{6} \, \eq x = \frac{1}{6}
 \end{cases}\)
-\\ \\ \\
+\\ \\ 
 \[\uu{x = \frac{1}{6}}, \qquad \uu{y = \frac{1}{6}}, \qquad \uu{z = \frac{1}{2}}\]
-\\ \\ \\
 
 \subsection*{Opppgave 4}
 \(A = \begin{cases}
@@ -234,27 +230,28 @@ dvs.
     0.3a-0.5b+0.1c=0 \\
     0.1a+0.2b-0.7c=0 
 \end{cases}
-\\ \\ \\ \\
+\\ \\ \\ \\ \\
 A'= \begin{pmatrix}
     1&1&1&120\\
     -0.4&0.3&0.6&0\\
     0.3&-0.5&0.1&0\\
     0.1&0.2&-0.7&0
 \end{pmatrix}
-\eqto{10II, 10III, 10IV}
+\eqqto{10II\\\\10III\\\\10IV}
 \begin{pmatrix}
     1&1&1&120\\
     -4&3&6&0\\
     3&-5&1&0\\
     1&2&-7&0
 \end{pmatrix}
-\eqto{II+4I, III-3I, IV-I}
+\eqqto{II+4I\\\\III-3I\\\\IV-I}
 \begin{pmatrix}
     1&1&1&120\\
     0&7&10&480\\
     0&-8&-2&-360\\
     0&1&-8&-120
-\end{pmatrix} \\ \\ \\
+\end{pmatrix} 
+\\ \\ \\ \\
 \eqto{III+II}
 \begin{pmatrix}
     1&1&1&120\\
@@ -283,7 +280,7 @@ A'= \begin{pmatrix}
     0&-1&8&120\\
     0&0&0&0
 \end{pmatrix}
-\\ \\ \\
+\\ \\ \\ \\ 
 \eqto{III+II}
 \begin{pmatrix}
     1&1&1&120\\
@@ -291,14 +288,13 @@ A'= \begin{pmatrix}
     0&0&11&220\\
     0&0&0&0
 \end{pmatrix}
-\eqto{\frac{1}{11}III}
+\eqqto{\frac{1}{11}III}
 \begin{pmatrix}
     1&1&1&120\\
     0&1&3&100\\
     0&0&1&20\\
     0&0&0&0
 \end{pmatrix}
-\quad
 \eqto{I-II}
 \begin{pmatrix}
     1&0&-2&20\\
@@ -312,7 +308,8 @@ A'= \begin{pmatrix}
     0&1&3&100\\
     0&0&1&20\\
     0&0&0&0
-\end{pmatrix} \\ \\ \\
+\end{pmatrix} 
+\\ \\ \\ \\
 \eqto{II-3III}
 \begin{pmatrix}
     1&0&0&60\\
@@ -333,7 +330,7 @@ A'= \begin{pmatrix}
     -x+2y+4z+3u = 2\\
     -2x+y+3z-4u=-1
 \end{cases}\)
-\\ \\ \\ 
+\\ \\ \\ \\
 \(
 A' = 
 \begin{pmatrix}
@@ -347,7 +344,7 @@ A' =
     -1&2&4&3&2 \\
     0&0&4&-1&-5
 \end{pmatrix}
-\eqto{(-1)II, I\leftrightarrow II}
+\eqqto{(-1)II\\\\I\leftrightarrow II}
 \begin{pmatrix}
     1&-2&-4&-3&-2 \\
     2&-1&1&3&-4 \\
@@ -391,7 +388,7 @@ A' =
     0&1&0&\frac{15}{4}&\frac{15}{4} \\
     0&0&1&-\frac{1}{4}&-\frac{5}{4}
 \end{pmatrix}
-\\ \\ \\
+\\ \\ \\ \\
 A = 
 \begin{cases}
     x + u\frac{7}{2} = \frac{1}{2} \ \ \eq x = \frac{1}{2} - \frac{7}{2}u\\
@@ -407,19 +404,151 @@ A =
 \centering
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=.8\linewidth]{oppg3.png}
-  \caption{Oppgave 1 kode}
+  \includegraphics[width=.8\linewidth]{oppg6.png}
+  \caption{Oppgave 6 kode}
   \label{fig:sub1}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=.3\linewidth]{oppg3svar.png}
-  \caption{Oppgave 1 output}
+  \includegraphics[width=.7\linewidth]{oppg6svar.png}
+  \caption{Oppgave 6 output}
   \label{fig:sub2}
 \end{subfigure}
-\caption{Seksjon 1.5 oppgave 1}
+\caption{Seksjon 4.3 oppgave 6}
 \label{fig:test}
-\end{figure}
+\end{figure} 
+\\
+Output gir oss den reduserte trappeform-matrisen. Fra den kan vi regne videre hva vi fant ovenfor.
 
+\newpage
+\section*{Seksjon 4.4}
+\subsection*{Oppgave 4}
+\lrule{15}
+a)
+\(A = 
+\begin{pmatrix}
+    0&1&2&0\\
+    1&0&-1&1\\
+    6&0&-6&7\\
+    2&1&0&0
+\end{pmatrix}
+\eqto{I \leftrightarrow II}
+\begin{pmatrix}
+    1&0&-1&1\\
+    0&1&2&0\\
+    6&0&-6&7\\
+    2&1&0&0
+\end{pmatrix}
+\eqto{IV -2I}
+\begin{pmatrix}
+    1&0&-1&1\\
+    0&1&2&0\\
+    6&0&-6&7\\
+    0&1&2&-2
+\end{pmatrix}
+\eqto{III-6I}
+\begin{pmatrix}
+    1&0&-1&1\\
+    0&1&2&0\\
+    0&0&0&1\\
+    0&1&2&-2
+\end{pmatrix}
+\\ \\ \\
+\eqto{IV-1II}
+\begin{pmatrix}
+    1&0&-1&1\\
+    0&1&2&0\\
+    0&0&0&1\\
+    0&0&0&-2
+\end{pmatrix}
+\eqto{IV+2III}
+\begin{pmatrix}
+    1&0&-1&1\\
+    0&1&2&0\\
+    0&0&0&1\\
+    0&0&0&0
+\end{pmatrix}
+\\ \\ \\ \)
+\lrule{5}
+b)
+\(b = 
+\begin{pmatrix}
+    0\\1\\h\\0
+\end{pmatrix}
+\qquad
+\text{Vi setter sammen A og b slik at } B = (A, b)
+\\ \\ \\ \\
+B = 
+\begin{pmatrix}[cccc|c]
+    0&1&2&0&0\\
+    1&0&-1&1&1\\
+    6&0&-6&7&h\\
+    2&1&0&0&0
+\end{pmatrix}
+\eqqto{I \leftrightarrow II}
+\begin{pmatrix}[cccc|c]
+    1&0&-1&1&1\\
+    0&1& 2&0&0\\
+    6&0&-6&7&h\\
+    2&1& 0&0&0
+\end{pmatrix}
+\eqqto{IV-2I}
+\begin{pmatrix}[cccc|c]
+    1&0&-1&1&1\\
+    0&1& 2&0&0\\
+    6&0&-6&7&h\\
+    0&1& 2&-2&-2
+\end{pmatrix}
+\\ \\ \\ \\
+\eqqto{III-6I}
+\begin{pmatrix}[cccc|c]
+    1&0&-1&1&1\\
+    0&1& 2&0&0\\
+    0&0&0&1&h-6\\
+    0&1& 2&-2&-2
+\end{pmatrix}
+\eqqto{IV-1II}
+\begin{pmatrix}[cccc|c]
+    1&0&-1&1&1\\
+    0&1& 2&0&0\\
+    0&0&0&1&h-6\\
+    0&0& 0&-2&-2
+\end{pmatrix}
+\eqqto{IV+2III}
+\begin{pmatrix}[cccc|c]
+    1&0&-1&1&1\\
+    0&1&2&0&0\\
+    0&0&0&1&h-6\\
+    0&0&0&0&2h-14
+\end{pmatrix}
+\)
+\\ \\ \\ \\
+Om $(2h-14)$ ikke blir 0, så blir søyle 4 pivot-søyle, som vil si at systemet har ingen løsninger. \\\\
+Derfor velger vi å sette inn \uu{$h = 7$}, og får: \\\\\\
+$\begin{pmatrix}[cccc|c]
+    1&0&-1&1&1\\
+    0&1&2&0&0\\
+    0&0&0&1&1\\
+    0&0&0&0&0
+\end{pmatrix}
+\eqqto{I-III}
+\begin{pmatrix}[cccc|c]
+    1&0&-1&0&0\\
+    0&1&2&0&0\\
+    0&0&0&1&1\\
+    0&0&0&0&0
+\end{pmatrix}
+\quad \text{Dvs. at }
+\uu{\begin{cases}
+    x_1=x_3\\
+    x_2=-2x_3\\
+    0=0, \text{ dvs. $x_3$ er fri} \\
+    x_4=1
+\end{cases}}
+\text{ f.eks. }
+x = \begin{pmatrix}
+    1\\-2\\1\\1
+\end{pmatrix}$
+\lrule{20}
 
 \end{document}
