@@ -1,0 +1,417 @@
+\documentclass{article}
+\date{}
+
+\usepackage[norsk]{babel}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[a4paper, top=1in, bottom=1in, left=1in, right=1in]{geometry}
+\usepackage{subcaption}
+\usepackage{amsfonts}
+\usepackage{dirtytalk}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{ulem}
+
+% vertical vector = \vect{...}
+\newcommand{\vect}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+% double underline is \uu{...}
+\newcommand{\uu}[1]{\underline{\underline{#1}}}
+% double bold underline is \uub{...}
+\newcommand{\uub}[1]{\underline{\underline{\textbf{#1}}}}
+% align counter reset
+\AtBeginEnvironment{align}{\setcounter{equation}{0}}
+% arrows
+\newcommand{\lra}{\quad\Longrightarrow\quad}
+% equivalent = \eq 
+\newcommand{\eq}{\quad\Longleftrightarrow\quad}
+\newcommand{\eqq}{\quad=\quad}
+% 3x space
+\newcommand{\trip}{\ \ \ }
+% relational equal
+\newcommand{\eqto}[1]{\overset{#1}{\sim}}
+% relational equal som støtter linjeskift
+\newcommand{\eqqto}[1]{\overset{\substack{#1}}{\sim}}
+
+% linje for å skille oppgaver
+\newcommand{\lrule}[1]{%
+    \vspace{#1pt} % Space above the line
+    \hrule % Draw the horizontal line
+    \vspace{#1pt} % Space below the line
+}
+
+% matrise med strek, e.g. \begin{pmatrix}[ccc|c]
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+
+\setlength{\parskip}{5pt} 
+\setlist{itemsep=8pt, parsep=5pt}
+
+
+\begin{document}
+
+\subsection*{Oppgave 1}
+\(y = \vect{-1\\2\\0}\ \text{ og } \ z=\vect{2\\1\\5} \)
+\\\\\\
+Løs ligningen \(4y-2x=3z\) for x
+\\\\\\
+\(2x = 4y-3z \eq \vect{2x_1\\2x_2\\2x_3} = \vect{-4\\8\\0} - \vect{6\\3\\15} \eq \vect{2x_1\\2x_2} = \vect{-10\\5\\15} \eq \vect{x_1\\x_2\\x_3} = \vect{-5\\ 5/2\\ 15/2}\)
+\\\\\\
+dvs. \(\mathbf{x = \vect{-5\\5/2\\15/2} = d}\)
+\\\\\\
+
+
+\subsection*{Oppgave 2}
+\(a = \vect{4, 3, 2}\) og \(b = \vect{-1, -4, -1}\)
+\\\\
+Prosjekjonen av a ned på b betegnes: \quad \(\mathbf{proj_b A = \frac{a\cdot b}{b \cdot b}b}\)
+\\\\
+\(a\cdot b = 4\cdot-1 + 3\cdot-4 + 2\cdot-1 = -4-12-2=-18\)
+\\\\
+\(b\cdot b = -1\cdot-1 + -4\cdot-4 + (-1)\cdot(-1) = 1 + 16 + 1 = 18\)
+\\\\
+\(proj_bA = -\frac{18}{18}\cdot\vect{-1, -4, -1} = -1 \cdot (-1, -4, -1) = (1, 4, 1)\)
+\\\\\\
+\(\mathbf{proj_bA = (1, 4, 1) = c}\)
+\\\\\\
+
+
+\subsection*{Oppgave 3}
+\(a = \vect{1, 0, 2}\) og \(b = \vect{2, 2, 1}\)
+\\\\
+\(a \times b = \begin{vmatrix}
+    1&1&1\\
+    1&0&2\\
+    2&2&1
+\end{vmatrix} = \begin{vmatrix}
+    0&2\\2&1
+\end{vmatrix} - \begin{vmatrix}
+    1&2\\2&1
+\end{vmatrix} + \begin{vmatrix}
+    1&0\\2&2
+\end{vmatrix} = [(0-4), -(1-4), (2-0)] = [-4, 3, 2]\)
+\\\\\\
+\(\mathbf{a\times b = (-4, 3, 2) = a}\)
+\\\\\
+
+\newpage
+\subsection*{Oppgave 4}
+\(A = \vect{2&3&-1\\0&2&4}\) og \(x = \vect{1\\1\\2}\)
+\\\\
+\(Ax = \vect{2&3&-1 \\ 0&2&4}\vect{1\\1\\2} = \begin{pmatrix}
+    2+3-2 \\ 0+2+8
+\end{pmatrix} = \begin{pmatrix}
+    3 \\ 10
+\end{pmatrix}\)
+\\\\\\
+\(\mathbf{Ax = \vect{3 \\ 10} = b}\)
+\\\\\\
+
+\subsection*{Oppgave 5}
+\(A = \vect{1&2&4\\0&2&3\\0&0&3}\) og \(B = \vect{2&0&0\\1&4&0\\2&7&4}\)
+\\\\\\
+\(AB = \begin{pmatrix}
+    2+2+8 & 0+8+28 & 0+0+16 \\
+    0+2+6 & 0+8+21 & 0+0+12 \\
+    0+0+6 & 0+0+21 & 0+0+12
+\end{pmatrix} = \begin{pmatrix}
+    12 & 36 & 16 \\
+    8 & 29 & 12 \\
+    6 & 21 & 12
+\end{pmatrix}\)
+\\\\\\
+\(\mathbf{AB = \begin{pmatrix}
+    12 & 36 & 16 \\
+    8 & 29 & 12 \\
+    6 & 21 & 12
+\end{pmatrix} = b}\)
+\newpage
+
+\subsection*{Oppgave 6}
+\(A, B\ \in \mathbb{R}^{n\times n}\)
+\\\\\\
+\((B^TA)^T(AB)^{-1}\)
+\\\\
+\((B^TA)^T = A^TB\)  \quad og \quad \((AB)^{-1} = (B^{-1}A^{-1})\)
+\\\\
+\(A^TB(B^{-1}A^{-1}) = A^T((BB^{-1})A^{-1}) = A^T(I_nA^{-1}) = A^T(A^{-1}) = A^TA^{-1}\)
+\\\\\\
+\(\mathbf{(B^T)A^T(AB)^{-1} = A^TA^{-1} = e}\)
+\\\\\\
+
+
+\subsection*{Oppgave 7}
+\(\begin{cases}
+    2x+y+3z=0\\
+    x+4z=a\\
+    5x+2y+10z=2
+\end{cases}\)
+\\\\\\
+\(\begin{pmatrix}
+    2&1&3&0\\
+    1&0&4&a\\
+    5&2&10&2
+\end{pmatrix}
+\eqqto{I \leftrightarrow II}
+\begin{pmatrix}
+    1&0&4&a\\
+    2&1&3&0\\
+    5&2&10&2
+\end{pmatrix}
+\eqqto{II-2I\\\\III-5I}
+\begin{pmatrix}
+    1&0&4&a\\
+    0&1&-5&-2a\\
+    0&2&-10&2-5a
+\end{pmatrix}
+\eqqto{III-2II}
+\begin{pmatrix}
+    1&0&4&a\\
+    0&1&-5&-2a\\
+    0&0&0&2-a
+\end{pmatrix}
+\\\\\\
+\begin{cases}
+    x + 4z = a \eq x = a-4z \eq x = 2-4z\\
+    y -5z = -2a \eq y = 5z-2a \eq y = 5z-4\\
+    0 = 0 \eq z = z \eq z \in \mathbb{R}
+\end{cases}
+\\\\\\
+\text{ og for \textbf{a = 2 = b)}  finnes det uendelig mange løsninger.}
+\)
+\\\\
+\(\mathbf{a = 2 = b})\)
+\\\\
+
+
+\subsection*{Oppgave 8}
+\(
+A = \vect{2&2&6 \\ 2&1&4 \\ 1&2&5 \\ 0&1&2}
+\eqqto{II-I}
+\vect{2&2&6 \\ 0&-1&-2 \\ 1&2&5 \\ 0&1&2}
+\eqqto{I/2}
+\vect{1&1&3 \\ 0&-1&-2 \\ 1&2&5 \\ 0&1&2}
+\eqqto{III-I}
+\vect{1&1&3 \\ 0&-1&-2 \\ 0&1&2 \\ 0&1&2}
+\eqqto{IV-III\\\\I+II}
+\vect{1&0&1 \\ 0&-1&-2 \\ 0&1&2 \\ 0&0&0}
+\\\\\\
+\eqqto{III+II}
+\vect{1&0&1 \\ 0&-1&-2 \\ 0&0&0 \\ 0&0&0}
+\eqqto{-1II}
+\vect{1&0&1 \\ 0&1&2 \\ 0&0&0 \\ 0&0&0}
+\mathbf{ = a)}\)
+\\\\\\
+
+
+\newpage
+\subsection*{Oppgave 9}
+\(\vect{-2&-6&-3&2 \\ 1&3&2&-1 \\ 2&6&4&0}
+\eqqto{I+II}
+\vect{-1&-3&-1&1 \\ 1&3&2&-1 \\ 2&6&4&0}
+\eqqto{II+I}
+\vect{-1&-3&-1&1 \\ 0&0&1&0 \\ 2&6&4&0}
+\eqqto{III+2I}
+\vect{-1&-3&-1&1 \\ 0&0&1&0 \\ 0&0&-2&-2}
+\eqqto{III+2II}
+\\\\
+\vect{-1&-3&-1&1 \\ 0&0&1&0 \\ 0&0&0&-2}
+\eqqto{-1I\\\\-III/2}
+\vect{1&3&1&-1 \\ 0&0&1&0 \\ 0&0&0&1}
+\eqqto{I-II\\\\I+III}
+\vect{1&3&0&0 \\ 0&0&1&0 \\ 0&0&0&1}
+\)
+\\\\\\
+Søylekolonner: \qquad \textbf{kolonne 1, 3 og 4 = d)}
+\\
+
+
+\subsection*{Oppgave 10}
+\(\vect{1&2&4 \\ 2&1&3 \\ 2&7&13} x = b\)
+\\\\\\
+\textbf{hint:} \\\\
+\(
+\begin{pmatrix}[ccc|c]
+1&2&4&b_1 \\ 
+2&1&3&b_2 \\ 
+2&7&13&b_3
+\end{pmatrix}
+\eqqto{II-2I\\\\III-2I}
+\begin{pmatrix}[ccc|c]
+1&2&4&b_1 \\ 
+0&-3&-5&b_2-2b_1 \\ 
+0&3&5&b_3-2b_1
+\end{pmatrix}
+\eqqto{III+II}
+\begin{pmatrix}[ccc|c]
+1&2&4&b_1 \\ 
+0&-3&-5&b_2-2b_1 \\ 
+0&0&0&b_3+b_2-4b_1
+\end{pmatrix}
+\eqqto{-II/3}
+\begin{pmatrix}[ccc|c]
+1&2&4&b_1 \\ 
+0&1&5/3&-(b_2-2b_1)/3 \\ 
+0&0&0&b_3+b_2-4b_1
+\end{pmatrix}
+\)
+\\\\\\
+For at en løsning skal finnes så må $(b_3+b_2-4b_1) = 0$ 
+\\\\\\
+Dette tilfredsstilles hvis $\mathbf{b = \vect{1\\3\\1} = e)}$
+\\\\\\
+Da blir $(b_3+b_2-4b_1) = (1+3-4) = 0$
+
+\newpage
+\subsection*{Oppgave 11}
+Hvilken påstand er sann?
+\begin{enumerate}
+    \item Det finnes systemer $Ax=b$ som har nøyaktig to løsninger.
+
+    \item Hvis A har et pivotelement i hver kolonne så har $Ax=b$ alltid løsning(er)\\
+
+    \item Trappeformen til en matrise er unik
+
+    \item $Ax=b$ har alltid løsning(er) når A har flere kolonner enn rader
+
+    \item Hvis A har et pivotelement i hver rad så har $Ax = b$ alltid løsninger
+    
+\end{enumerate} 
+\\\\\\\
+
+
+\subsection*{Oppgave 12}
+\(A =\begin{cases}
+    2x_1+x2=1-3x_3\\
+    x_2+4x_3=x_1-12\\
+    3x_1+x_3=5
+\end{cases}
+=
+\begin{cases}
+    2x_1+x_2+3x_3=1\\
+    -x_1+x_2+4x_3=-12\\
+    3x_1+x_3=5
+\end{cases}\)
+\\\\\\
+\(A' = 
+\begin{pmatrix}[ccc|c]
+    2&1&3&1\\
+    -1&1&4&-12\\
+    3&0&1&5
+\end{pmatrix}
+\eqqto{\frac{1}{2}I}
+\begin{pmatrix}[ccc|c]
+    1&1/2&3/2&1/2\\
+    -1&1&4&-12\\
+    3&0&1&5
+\end{pmatrix}
+\eqqto{II+I\\\\III-3I}
+\begin{pmatrix}[ccc|c]
+    1&1/2&3/2&1/2\\
+    0&3/2&11/2&-23/2\\
+    0&-3/2&-7/2&7/2
+\end{pmatrix}
+\eqqto{III+II}
+\\\\\\
+\begin{pmatrix}[ccc|c]
+    1&1/2&3/2&1/2\\
+    0&3/2&11/2&-23/2\\
+    0&0&2&-8
+\end{pmatrix}
+\eqqto{\frac{2}{3}II\\\\ \frac{1}{2}III}
+\begin{pmatrix}[ccc|c]
+    1&1/2&3/2&1/2\\
+    0&1&11/3&-23/3\\
+    0&0&1&-4
+\end{pmatrix}
+\eqqto{1-\frac{1}{2}II}
+\begin{pmatrix}[ccc|c]
+    1&0&-1/3&13/3\\
+    0&1&11/3&-23/3\\
+    0&0&1&-4
+\end{pmatrix}
+\eqqto{I+\frac{1}{3}III}
+\\\\\\
+\begin{pmatrix}[ccc|c]
+    1&0&0&3\\
+    0&1&11/3&-23/3\\
+    0&0&1&-4
+\end{pmatrix}
+\eqqto{II-\frac{11}{3}III}
+\begin{pmatrix}[ccc|c]
+    1&0&0&3\\
+    0&1&0&7\\
+    0&0&1&-4
+\end{pmatrix}
+\qquad \mathbf{x = \vect{3\\7\\-4} = e}
+\)
+\\\\\\
+Hva kan vi si om løsningende?
+\\\\\\\\
+
+
+\subsection*{Oppgave 13}
+\(T:\mathbb{R}³ \rightarrow \mathbb{R}²\) er lineær avbildning slik at 
+\\\\
+\(T(e_1)=\vect{1\\2}, \qquad T(e_2)=\vect{3\\-3}, \qquad T(e_3)=\vect{0\\5}\)
+\\\\
+Der $e_k$ (for k = 1,2,3) er i vektoren $\mathbb{R}³$ med k-te komponent lik 1, og med alle andre komponenter lik 0.
+\\\\
+Hva kan vi si om T?
+
+\begin{enumerate}[a)]
+
+    \item $T(x)=\vect{1&2\\3&-3\\0&5} x$ for alle $x\in\mathbb{R}^3$
+    
+    \item T er inverterbar, og $T^{-1} \vect{\vect{3\\-3}} = e_2$
+    
+    \item $\T(x)=\vect{1&3&0\\2&-3&5}x$ for alle $x\in\mathbb{R}^3$\}\\
+    - Riktig
+    
+    \item $T=\vect{1&0&0\\0&1&0\\0&0&0}$
+
+
+    \item $T(x)\cdot T(y) = T(x\cdot Y)$ for alle $x,y \in \mathbb{R}^3$
+    
+\end{enumerate}
+
+
+\subsection*{Oppgave 14}
+\(A \in \mathbb{R}^2\) er mengden av alle punkter i trekanten som har hjørner i punktene $(1, 1), (2, 1), (2, 2)$
+\\\\
+Hvilket utsagn er sant?
+
+\([1,2]\times[1,2], x\geq y \eqq \{(1, 1), (2, 1), (2,2)\} \eqq b\)
+
+
+\subsection*{Oppgave 15}
+
+\subsection*{Oppgave 16}
+
+\(
+\forall p, P(p), \quad \exists q, P(q), \quad q > p 
+\\\\\\
+\neg(\forall p, P(p), \quad \exists q, P(q), \quad q > p)
+\\\\
+\exists p, P(p), \quad \neg(\exists q, P(q), \quad q > p)
+\\\\
+\exists p, P(p), \quad \forall q, P(q), \quad \neg(q > p)
+\\\\
+\exists p, P(p), \quad \forall q, P(q), \quad q \leq p
+\)
+\\\\\\
+Dvs. \quad Det finnes et primtall p for alle primtall q hvor q $\leq$ p
+\\\\
+Det finnes et primtall p slik at $q \leq p$ q for alle primtall q. = d
+
+\subsection*{Oppgave 17}
+
+"Det finnes et reelt tall a slik at x+a = x for alle relle tall x."
+\\\\
+\(\)
+
+\end{document}
