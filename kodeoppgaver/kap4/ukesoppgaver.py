@@ -1,4 +1,5 @@
 from numpy import *
+from sympy import *
 
 '''
 Seksjon 4.5
@@ -63,3 +64,24 @@ C[0, :] = C[0, :] + 3*C[2, :]
 C[1, :] = C[1, :] + 3*C[2, :]
 print(C, end="\n\n")
 
+A = matrix([[2, -1, 3],
+            [0, -1, 2],
+            [-4, 3, 1]])
+
+b = matrix([[-1, 2, 3]])
+
+# xA = b      <=>      xAA^{-1} = bA^{-1}       <=>      x = bA^{-1}
+
+Ainv = linalg.inv(A)
+
+x = matmul(b, Ainv)
+
+
+# oppgave 4 sek 4.6
+A = Matrix([[1, 2, 5, 2, 7],
+            [0, 1, -7, -1, 4],
+            [-1, 3, 6, 0, -3],
+            [2, -4, 3, 3, 1]])
+#           x1  x2  x3 x4 x5
+
+redusert, pivot = A.rref()
