@@ -525,7 +525,62 @@ B =
 \\ \\ \\ \\
 Om $(2h-14)$ ikke blir 0, så blir søyle 4 pivot-søyle, som vil si at systemet har ingen løsninger. \\\\
 Derfor velger vi å sette inn \uu{$h = 7$}, og får: \\\\\\
-$\begin{pmatrix}[cccc|c]
+\(
+\begin{pmatrix}[cccc|c]
+    0&1&2&0&0\\
+    1&0&-1&1&1\\
+    6&0&-6&7&h\\
+    2&1&0&0&0
+\end{pmatrix}
+\eqqto{I \leftrightarrow II}
+\begin{pmatrix}[cccc|c]
+    1&0&-1&1&1\\
+    0&1&2&0&0\\
+    6&0&-6&7&h\\
+    2&1&0&0&0
+\end{pmatrix}
+\eqqto{IV-2I}
+\begin{pmatrix}[cccc|c]
+    1&0&-1&1&1\\
+    0&1&2&0&0\\
+    6&0&-6&7&h\\
+    0&1&2&-2&-2
+\end{pmatrix}
+\eqqto{III-6I}
+\begin{pmatrix}[cccc|c]
+    1&0&-1&1&1\\
+    0&1&2&0&0\\
+    0&0&0&1&h-6\\
+    0&1&2&-2&-2
+\end{pmatrix}
+\\\\\\
+\eqqto{Iv-II}
+\begin{pmatrix}[cccc|c]
+    1&0&-1&1&1\\
+    0&1&2&0&0\\
+    0&0&0&1&h-6\\
+    0&0&0&-2&-2
+\end{pmatrix}
+\eqqto{-\frac{1}{2}IV}
+\begin{pmatrix}[cccc|c]
+    1&0&-1&1&1\\
+    0&1&2&0&0\\
+    0&0&0&1&h-6\\
+    0&0&0&1&1
+\end{pmatrix}
+\eqqto{Iv-III}
+\begin{pmatrix}[cccc|c]
+    1&0&-1&1&1\\
+    0&1&2&0&0\\
+    0&0&0&1&h-6\\
+    0&0&0&0&1-(h-6)
+\end{pmatrix}
+\)
+
+Da må $1-(h-6)$ være lik 0. dvs \uu{$h = 7$}
+
+\(
+\begin{pmatrix}[cccc|c]
     1&0&-1&1&1\\
     0&1&2&0&0\\
     0&0&0&1&1\\
@@ -538,17 +593,20 @@ $\begin{pmatrix}[cccc|c]
     0&0&0&1&1\\
     0&0&0&0&0
 \end{pmatrix}
-\quad \text{Dvs. at }
-\uu{\begin{cases}
-    x_1=x_3\\
-    x_2=-2x_3\\
-    0=0, \text{ dvs. $x_3$ er fri} \\
-    x_4=1
-\end{cases}}
+\\\\ \text{ Det gir oss: }
+\begin{cases}
+    x_1 = x_3 \\
+    x_2 = -2x_3 \\
+    x_3 \text{ er fri. } \\
+    x_4 = 1
+\end{cases}
+\quad
 \text{ f.eks. }
 x = \begin{pmatrix}
     1\\-2\\1\\1
 \end{pmatrix}$
 \lrule{20}
+\)
+
 
 \end{document}
