@@ -85,3 +85,13 @@ A = Matrix([[1, 2, 5, 2, 7],
 #           x1  x2  x3 x4 x5
 
 redusert, pivot = A.rref()
+
+
+# oppgave 6 sek 4.6
+A = Matrix([[1, 0, 2, -1, 0],
+            [-2, -3, -7, 3, 2],
+            [3, 4, 10, -1, 1],
+            [2, 1, 5, 2, 0]])
+#           x1  x2  x3 x4 x5
+
+redusert, pivot = A.rref()
