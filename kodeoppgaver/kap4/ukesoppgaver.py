@@ -78,20 +78,32 @@ x = matmul(b, Ainv)
 
 
 # oppgave 4 sek 4.6
-A = Matrix([[1, 2, 5, 2, 7],
+A4 = Matrix([[1, 2, 5, 2, 7],
             [0, 1, -7, -1, 4],
             [-1, 3, 6, 0, -3],
             [2, -4, 3, 3, 1]])
 #           x1  x2  x3 x4 x5
 
-redusert, pivot = A.rref()
+redusert4, pivot = A4.rref()
 
 
 # oppgave 6 sek 4.6
-A = Matrix([[1, 0, 2, -1, 0],
+A6 = Matrix([[1, 0, 2, -1, 0],
             [-2, -3, -7, 3, 2],
             [3, 4, 10, -1, 1],
             [2, 1, 5, 2, 0]])
 #           x1  x2  x3 x4 x5
 
-redusert, pivot = A.rref()
+redusert6, pivot = A6.rref()
+
+
+A8a = Matrix([[2, -4, 1],
+            [-1, 2, 3]])
+
+redusert8a, pivot = A8a.rref()
+
+A8b = Matrix([[1, 0, 2, 2],
+              [3, 2, 8, 3],
+              [-1, 1, 0, 1]])
+
+redusert8b, pivot = A8b.rref()
