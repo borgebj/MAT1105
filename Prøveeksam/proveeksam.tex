@@ -278,7 +278,8 @@ Hvilken påstand er sann?
 
     \item $Ax=b$ har alltid løsning(er) når A har flere kolonner enn rader
 
-    \item Hvis A har et pivotelement i hver rad så har $Ax = b$ alltid løsninger
+    \item \textbf{Hvis A har et pivotelement i hver rad så har $Ax = b$ alltid løsninger}\\
+    - Dette er sant fordi vet at hver 
     
 \end{enumerate} 
 \\\\\\\
@@ -303,56 +304,46 @@ Hvilken påstand er sann?
     -1&1&4&-12\\
     3&0&1&5
 \end{pmatrix}
-\eqqto{\frac{1}{2}I}
+\eqqto{I \leftrightarrow II\\\\-1I}
 \begin{pmatrix}[ccc|c]
-    1&1/2&3/2&1/2\\
-    -1&1&4&-12\\
+    1&-1&-4&12\\
+    2&1&3&1\\
     3&0&1&5
 \end{pmatrix}
-\eqqto{II+I\\\\III-3I}
+\eqqto{II-2I\\\\III-3I}
 \begin{pmatrix}[ccc|c]
-    1&1/2&3/2&1/2\\
-    0&3/2&11/2&-23/2\\
-    0&-3/2&-7/2&7/2
+    1&-1&-4&12\\
+    0&3&11&-23\\
+    0&3&13&-31
 \end{pmatrix}
-\eqqto{III+II}
-\\\\\\
+\eqqto{III-II}
 \begin{pmatrix}[ccc|c]
-    1&1/2&3/2&1/2\\
-    0&3/2&11/2&-23/2\\
+    1&-1&-4&12\\
+    0&3&11&-23\\
     0&0&2&-8
 \end{pmatrix}
-\eqqto{\frac{2}{3}II\\\\ \frac{1}{2}III}
-\begin{pmatrix}[ccc|c]
-    1&1/2&3/2&1/2\\
-    0&1&11/3&-23/3\\
-    0&0&1&-4
-\end{pmatrix}
-\eqqto{1-\frac{1}{2}II}
-\begin{pmatrix}[ccc|c]
-    1&0&-1/3&13/3\\
-    0&1&11/3&-23/3\\
-    0&0&1&-4
-\end{pmatrix}
-\eqqto{I+\frac{1}{3}III}
 \\\\\\
+\eqqto{(1/2)III}
 \begin{pmatrix}[ccc|c]
-    1&0&0&3\\
+    1&-1&-4&12\\
+    0&3&11&-23\\
+    0&0&1&-4
+\end{pmatrix}
+\eqqto{(1/3)II}
+\begin{pmatrix}[ccc|c]
+    1&-1&-4&12\\
     0&1&11/3&-23/3\\
     0&0&1&-4
 \end{pmatrix}
-\eqqto{II-\frac{11}{3}III}
+\eqqto{I+II\\\\I+(1/3)III\\\\II-(11/3)III}
 \begin{pmatrix}[ccc|c]
     1&0&0&3\\
     0&1&0&7\\
     0&0&1&-4
-\end{pmatrix}
-\qquad \mathbf{x = \vect{3\\7\\-4} = e}
+\end{pmatrix} \\
+x = \vect{3\\7\\-4} = e
 \)
-\\\\\\
-Hva kan vi si om løsningende?
 \\\\\\\\
-
 
 \subsection*{Oppgave 13}
 \(T:\mathbb{R}³ \rightarrow \mathbb{R}²\) er lineær avbildning slik at 
@@ -385,7 +376,7 @@ Hva kan vi si om T?
 \\\\
 Hvilket utsagn er sant?
 
-\([1,2]\times[1,2], x\geq y \eqq \{(1, 1), (2, 1), (2,2)\} \eqq b\)
+\([1,2]\times[1,2], x\geq y \eqq \{(1, 1), (2, 1), (2,2)\} \eqq a\)
 
 
 \subsection*{Oppgave 15}
