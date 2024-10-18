@@ -11,9 +11,12 @@
 \usepackage{enumerate}
 \usepackage{amssymb}
 \usepackage{float}
+\usepackage{bm}
+
 
 % vertical vector = \vect{...}
 \newcommand{\vect}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+\newcommand{\dett}[1]{\begin{vmatrix} #1 \end{vmatrix}}
 % double underline is \uu{...}
 \newcommand{\uu}[1]{\underline{\underline{#1}}}
 % double bold underline is \uub{...}
@@ -1429,10 +1432,10 @@ x_1 = -1, \quad x_2 = \frac{1}{2} \qquad b = -1\vect{-4\\3} + \frac{1}{2}\vect{-
 \)
 \\\\\\\\
 \subsection*{Oppgave 2}
-Skriv b som en lineærkombinasjon av $a_1$, $a_2$ og\\\\$a_3$ når $a_1 = \vect{1\\0\\-1}, a_2 = \vect{1\\2\\1}, a_3 = \vect{3\\-1\\2}$ og $b = \vect{-2\\5\\1}$ 
+Skriv b som en lineærkombinasjon av $a_1$, $a_2$, og $a_3$ når \\\\ $a_1 = \vect{1\\0\\-1}, a_2 = \vect{1\\2\\1}, a_3 = \vect{3\\-1\\2}$ og $b = \vect{-2\\5\\1}$ 
 \\\\\\
 Vi setter de sammen og får:
-\\\\\\
+\\\\
 \((a_1|a_2|a_3|b_3) = 
 \begin{pmatrix}[c|c|c|c]
 1&1&3&-2\\
@@ -1514,6 +1517,8 @@ Avgjør om alle vektorer i $\mathbb{R}$ relevant for n, kan skrives som en line�
     - \uu{Ja}
 
     \vspace{5em}
+    (ikke oblig)
+    \vspace{1em}
     \item \(a_1=\vect{1\\2\\3}, \quad a_2=\vect{1\\0\\-1}, \quad a_3=\vect{1\\4\\7} \\\\\\
     (a_1|a_2|a_3) = 
     \begin{pmatrix}[c|c|c]
@@ -1851,8 +1856,7 @@ Avgjør om liner uavhengighet, dvs. om hver kolonne i dens rref er pivot.
 \text{\uu{Nei}, kol. 3 er ikke pivot}
 \)
 
-\vspace{4em}
-(ikke oblig)
+\vspace{2em}
 
 \item \(
 \vect{1\\0\\1}, \vect{2\\-1\\3}, \vect{-1\\2\\5}
@@ -2131,6 +2135,7 @@ Vi kan se at $\{a_1, a_2, a_3\}$ er lineært uavhengige, og dermed, \uu{$\{a_1, 
 
 \end{enumerate}
 
+\subsection*{Oppgave 10}
 
 \subsection*{Oppgave 11}
 \(
@@ -2336,15 +2341,232 @@ E_2^{-1} = \vect{1&0\\0&3}
 \req 
 E_3 = \vect{1&-2\\0&1}, \
 E_3^{-1} = \vect{1&2\\1&1}
-\\\\\\
+\\\\\\\)
+\[
 A = E_1^{-1} E_2^{-1}  E_3^{-1}  \eqq \uu{\vect{1&0\\-1&1}\vect{1&0\\0&3}\vect{1&2\\0&1}}
-\)
+\]
 
 \newpage
 \subsection*{Oppgave 3}
 
+\(
+\begin{pmatrix}
+1&2&1\\
+-1&-2&3\\
+0&1&0 
+\end{pmatrix}
+\eqqto{II+I}
+\begin{pmatrix}
+1&2&1\\
+0&0&4\\
+0&1&0 
+\end{pmatrix}
+\req E_1 =
+\begin{pmatrix}
+1&0&0\\
+1&1&0\\
+0&0&1 
+\end{pmatrix}
+, \ \ \quad E_1^{-1}=
+\begingroup \boldmath{
+\begin{pmatrix}
+1&0&0\\
+-1&1&0\\
+0&0&1 
+\end{pmatrix}
+}\endgroup
+\\\\\\
+\begin{pmatrix}
+1&2&1\\
+0&0&4\\
+0&1&0 
+\end{pmatrix}
+\eqqto{II \lra III}
+\begin{pmatrix}
+1&2&1\\
+0&1&0\\
+0&0&4 
+\end{pmatrix}
+\ \ \req E_2 =
+\begin{pmatrix}
+1&0&0\\
+0&0&1\\
+0&1&0
+\end{pmatrix}
+, \ \ \quad E_2^{-1}=
+\begingroup \boldmath{
+\begin{pmatrix}
+1&0&0\\
+0&0&1\\
+0&1&0
+\end{pmatrix}
+}\endgroup
+\\\\\\
+\begin{pmatrix}
+1&2&1\\
+0&1&0\\
+0&0&4 
+\end{pmatrix}
+\eqqto{\frac{1}{4}III}
+\begin{pmatrix}
+1&2&1\\
+0&1&0\\
+0&0&1 
+\end{pmatrix}
+\quad \ \ \req E_3 =
+\begin{pmatrix}
+1&0&0\\
+0&1&0\\
+0&0&\frac{1}{4}
+\end{pmatrix}
+, \ \ \quad E_3^{-1}=
+\begingroup \boldmath{
+\begin{pmatrix}
+1&0&0\\
+0&1&0\\
+0&0&4
+\end{pmatrix}
+}\endgroup
+\\\\\\
+\begin{pmatrix}
+1&2&1\\
+0&1&0\\
+0&0&1 
+\end{pmatrix}
+\eqqto{I-2II}
+\begin{pmatrix}
+1&0&1\\
+0&1&0\\
+0&0&1 
+\end{pmatrix}
+\quad \ \req E_4=
+\begin{pmatrix}
+1&-2&0\\
+0&1&0\\
+0&0&1
+\end{pmatrix}
+, \quad E_4^{-1}=
+\begingroup \boldmath{
+\begin{pmatrix}
+1&2&0\\
+0&1&0\\
+0&0&1
+\end{pmatrix}
+}\endgroup
+\\\\\\
+\begin{pmatrix}
+1&0&1\\
+0&1&0\\
+0&0&1 
+\end{pmatrix}
+\eqqto{I-III}
+\begin{pmatrix}
+1&0&0\\
+0&1&0\\
+0&0&1 
+\end{pmatrix}
+\quad \ \req E_5 =
+\begin{pmatrix}
+ 1&0&-1\\
+ 0&1&0\\
+ 0&0&1
+\end{pmatrix}
+, \quad E_5^{-1} =
+\begingroup \boldmath{
+\begin{pmatrix}
+1&0&1\\
+0&1&0\\
+0&0&1
+\end{pmatrix}
+}\endgroup
+\\\\\\\\\)
+\[A = E_1^{-1}E_2^{-1}E_3^{-1}E_4^{-1}E_5^{-1} = \uu{
+\vect{1&0&0\\-1&1&0\\0&0&1} \vect{1&0&0\\0&0&1\\0&1&0} \vect{1&0&0\\0&1&0\\0&0&4} \vect{1&2&0\\0&1&0\\0&0&1} \vect{1&0&1\\0&1&0\\0&0&1}
+}
+\]
 
+\newpage
+\section*{Seksjon 4.9}
+\subsection*{Oppgave 1}
+Bruk definisjonen av determinant til å regne ut determinanten til matrisene:
 
+\begin{enumerate}[a)]
+
+\item \(
+\begin{pmatrix}
+1&-2&-1\\
+3&1&-2\\
+1&0&1
+\end{pmatrix} 
+\\\\\\
+det(a) = 
+1  \dett{1&-2\\0&1} +2 \dett{3&-2\\1&1} -1 \dett{3&1\\1&0} \eqq 1(1-0)+2(3+2)-1(0-1) = 1+10+1 = \uu{12}
+\)
+
+\vspace{2em}
+(ikke oblig)
+\vspace{1em}
+\item \(
+\begin{pmatrix}
+2&0&3\\
+1&-1&2\\
+0&1&2
+\end{pmatrix}
+\\\\\\
+det(b) =
+2 \dett{-1&2\\1&2} -0 \dett{1&2\\0&2} +3 \dett{1&-1\\0&1} \eqq 2(-2-2) +3(1-0) = -8+3 = \uu{-5}
+\)
+
+\vspace{1em}
+\item \(
+\begin{pmatrix}
+0&2&3\\
+-1&2&0\\
+2&-1&1
+\end{pmatrix}
+\\\\\\
+det(c) = 
+0\dett{2&0\\-1&1} -2\dett{-1&0\\2&1} +3\dett{-1&2\\2&-1} = -2(-1-0) +3(1-4) = 2-9 = \uu{-7}
+\)
+
+\end{enumerate}
+
+\subsection*{Oppgave 3}
+\begin{enumerate}[a)]
+
+\item \(
+\begin{pmatrix}
+1&2&4\\
+0&0&-1\\
+3&7&2
+\end{pmatrix}
+\)
+
+\vspace{2em}
+(ikke oblig)
+\vspace{1em}
+\item \(
+\begin{pmatrix}
+1&0&3\\
+2&-3&1\\
+4&0&2
+\end{pmatrix}
+\)
+
+\vspace{1em}
+
+\item \(
+\begin{pmatrix}
+3&1&0&4\\
+2&1&2&0\\
+0&0&1&-2\\
+1&2&1&2
+\end{pmatrix}
+\)
+
+\end{enumerate}
+
+\subsection*{Oppgave 10}
 
 
 \newpage
